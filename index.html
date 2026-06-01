@@ -1,618 +1,714 @@
 <!DOCTYPE html>
-<html lang="id" class="">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Pusat Belajar Matematika Seru • 4 Alat Pintar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tel-U ScholarPath 2026 - Gap Year Edition</title>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        telkom: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        },
+                        darkspace: {
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937',
+                            600: '#374151',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * { font-family: 'Inter', system-ui, sans-serif; }
-        body {
-            background: linear-gradient(145deg, #f0f4f8 0%, #e2e8f0 100%);
-            min-height: 100vh;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .dark body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
         }
-        .card-glow {
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+        ::-webkit-scrollbar-thumb {
+            background: #9f1239;
+            border-radius: 4px;
         }
-        .tab-aktif {
-            background-color: #3b82f6;
-            color: white;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e11d48;
         }
-        .dark .tab-aktif {
-            background-color: #2563eb;
-            color: white;
+        /* Custom Glow Animation */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(225, 29, 72, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(225, 29, 72, 0.7); }
         }
-        .animasi-muncul {
-            animation: masukHalus 0.3s ease-out;
+        .glow-red {
+            animation: pulse-glow 3s infinite;
         }
-        @keyframes masukHalus {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Desain lingkaran pecahan */
-        .lingkaran-pecahan {
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-            width: 120px;
-            height: 120px;
-            box-shadow: inset 0 4px 8px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .lingkaran-pecahan::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 20%;
-            width: 60%;
-            height: 60%;
-            border-radius: 50%;
-            background: white;
-            z-index: 1;
-        }
-        .dark .lingkaran-pecahan::after { background: #1e293b; }
     </style>
 </head>
-<body class="transition-colors duration-300">
+<body class="bg-darkspace-900 text-slate-100 font-sans min-h-screen selection:bg-telkom-600 selection:text-white overflow-x-hidden">
 
-    <div class="max-w-6xl mx-auto px-4 py-6 md:py-10">
-        
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-sm card-glow">
-            <div class="flex items-center gap-4 text-center sm:text-left">
-                <div class="bg-blue-600 text-white p-3 rounded-2xl shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
+    <!-- Nav Bar -->
+    <nav class="sticky top-0 z-50 bg-darkspace-900/95 backdrop-blur-md border-b border-telkom-900/40 px-4 py-3.5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-telkom-700 to-telkom-500 p-2.5 rounded-xl shadow-lg shadow-telkom-900/30">
+                    <i class="fa-solid fa-graduation-cap text-xl text-white"></i>
                 </div>
                 <div>
-                    <h1 class="text-2xl md:text-3xl font-extrabold text-slate-800 dark:text-white tracking-tight">🚀 Pintar Matematika</h1>
-                    <p class="text-slate-500 dark:text-slate-400 text-xs md:text-sm font-medium mt-0.5">Belajar jadi gampang dengan bantuan gambar otomatis!</p>
+                    <span class="font-display font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-100 to-telkom-400 bg-clip-text text-transparent">Tel-U ScholarPath</span>
+                    <span class="block text-[10px] text-telkom-500 font-bold uppercase tracking-widest -mt-1">Gap Year S1 Portal</span>
                 </div>
             </div>
-            <button id="tombolGantiTema" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-5 py-2.5 rounded-2xl shadow-sm hover:scale-105 active:scale-95 transition-all">
-                <span id="ikonTema" class="text-lg">🌙</span>
-                <span class="text-sm font-bold text-slate-700 dark:text-white" id="teksTema">Mode Gelap</span>
-            </button>
+            <div class="flex items-center space-x-4">
+                <span class="hidden md:inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-telkom-950/80 border border-telkom-500/30 text-telkom-400">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+                    Tahun Akademik 2026/2027
+                </span>
+                <a href="#eligibility" class="bg-telkom-600 hover:bg-telkom-700 text-white text-xs md:text-sm px-4 py-2 rounded-lg font-semibold transition duration-300 shadow-md shadow-telkom-900/40">
+                    Cek Peluangmu
+                </a>
+            </div>
         </div>
+    </nav>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-8">
-            <button data-buka-tab="kpk" class="tombol-tab p-3 md:p-4 text-xs md:text-sm font-bold rounded-2xl transition-all text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-blue-50 dark:hover:bg-slate-700 flex flex-col items-center gap-2 tab-aktif">
-                <span class="text-xl md:text-2xl">🧮</span> KPK & FPB
-            </button>
-            <button data-buka-tab="bangun" class="tombol-tab p-3 md:p-4 text-xs md:text-sm font-bold rounded-2xl transition-all text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-blue-50 dark:hover:bg-slate-700 flex flex-col items-center gap-2">
-                <span class="text-xl md:text-2xl">📐</span> Bangun Datar
-            </button>
-            <button data-buka-tab="peluang" class="tombol-tab p-3 md:p-4 text-xs md:text-sm font-bold rounded-2xl transition-all text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-blue-50 dark:hover:bg-slate-700 flex flex-col items-center gap-2">
-                <span class="text-xl md:text-2xl">🎲</span> Susun Angka
-            </button>
-            <button data-buka-tab="pecahan" class="tombol-tab p-3 md:p-4 text-xs md:text-sm font-bold rounded-2xl transition-all text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-blue-50 dark:hover:bg-slate-700 flex flex-col items-center gap-2">
-                <span class="text-xl md:text-2xl">🍕</span> Game Pecahan
-            </button>
-        </div>
-
-        <div id="kotak-kpk" class="wadah-modul lokasi-aktif animasi-muncul">
-            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm card-glow border border-slate-100 dark:border-slate-700">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-2xl bg-blue-100 dark:bg-blue-900/50 p-2 rounded-xl">⚡</span>
-                    <h2 class="text-xl font-extrabold text-blue-600 dark:text-blue-400">Pencari Otomatis KPK & FPB</h2>
+    <!-- Hero Banner -->
+    <header class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800/60 bg-gradient-to-b from-darkspace-900 via-darkspace-800 to-darkspace-900">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(159,18,57,0.15),transparent_45%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-full border border-slate-700/80 text-xs text-slate-300">
+                    <span class="bg-telkom-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full">INFO</span>
+                    <span>Gagal SNBT? Tenang, S1 Vokasi & Sarjana Masih Terbuka!</span>
                 </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Masukkan Angka Pertama</label>
-                        <input type="number" id="inputAngkaA" value="12" class="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-xl font-extrabold focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 focus:outline-none transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Masukkan Angka Kedua</label>
-                        <input type="number" id="inputAngkaB" value="18" class="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-xl font-extrabold focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 focus:outline-none transition-all">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 p-5 rounded-2xl border border-emerald-100 dark:border-emerald-900/50 text-center">
-                        <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">KPK (Kelipatan Terkecil)</p>
-                        <p id="teksHasilKPK" class="text-5xl font-black text-emerald-700 dark:text-emerald-300 mt-1">36</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-950/30 dark:to-orange-950/30 p-5 rounded-2xl border border-rose-100 dark:border-rose-900/50 text-center">
-                        <p class="text-xs font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest">FPB (Pembagi Terbesar)</p>
-                        <p id="teksHasilFPB" class="text-5xl font-black text-rose-700 dark:text-rose-300 mt-1">6</p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 dark:bg-slate-700/40 border border-slate-100 dark:border-slate-700 rounded-2xl p-5">
-                    <p class="font-bold text-slate-700 dark:text-slate-200 text-sm flex items-center gap-2">
-                        <span>📋</span> Cara Mendapatkan Hasilnya:
-                    </p>
-                    <div id="kotakLangkahDetail" class="text-xs md:text-sm text-slate-600 dark:text-slate-300 mt-3 space-y-3 font-medium"></div>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+                    Raih Beasiswa <br>
+                    <span class="bg-gradient-to-r from-telkom-400 via-rose-500 to-amber-500 bg-clip-text text-transparent">Hingga 100%</span> di Tel-U!
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+                    Spesial untuk kamu lulusan <strong class="text-telkom-400">Gap Year</strong> (3 tahun terakhir) yang menolak menyerah setelah ketolak SNBT. Temukan jalur beasiswa <strong class="text-white">S1 / D4</strong> terbaik tanpa risiko salah masuk D3.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#ranking-section" class="bg-gradient-to-r from-telkom-600 to-rose-600 hover:from-telkom-700 hover:to-rose-700 text-white font-bold px-6 py-3.5 rounded-xl transition duration-300 text-center shadow-lg shadow-telkom-900/50 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Lihat Rangking Beasiswa</span>
+                    </a>
+                    <a href="https://wa.me/6281122339123" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition duration-300 text-center flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-500"></i>
+                        <span>WhatsApp Admisi Resmi</span>
+                    </a>
                 </div>
             </div>
             
-            <div class="mt-4 bg-blue-600 text-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
-                <span class="text-xl">💡</span>
-                <p class="text-xs md:text-sm font-semibold leading-relaxed">
-                    <strong>Ingat Cepat:</strong><br>
-                    • <strong>KPK:</strong> Kalikan semua pohon faktor. Jika ada angka yang sama, pilih yang paling banyak pangkatnya!<br>
-                    • <strong>FPB:</strong> Pilih hanya angka faktor yang sama, lalu ambil yang paling kecil pangkatnya!
+            <!-- Quick Stats/Anxiety Reducer Grid -->
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
+                    <div class="text-telkom-500 text-3xl font-extrabold font-display">2024-2026</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Tahun Lulus Diijinkan</div>
+                    <p class="text-[11px] text-slate-500 mt-2">Aman untuk gap year 1-2 tahun ke belakang.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
+                    <div class="text-amber-500 text-3xl font-extrabold font-display">S1 / D4</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Target Utama Jenjang</div>
+                    <p class="text-[11px] text-slate-500 mt-2">Tanpa program D3 jika kamu memilih menyaringnya.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
+                    <div class="text-emerald-500 text-3xl font-extrabold font-display">100%</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Bebas Biaya Kuliah</div>
+                    <p class="text-[11px] text-slate-500 mt-2">Tersedia pada jalur seleksi utama dan prestasi.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
+                    <div class="text-rose-500 text-3xl font-extrabold font-display">Tanpa Tes</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Metode Seleksi Rapor</div>
+                    <p class="text-[11px] text-slate-500 mt-2">Gunakan prestasi rapor sekolah tanpa pusing ujian lagi.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Calculator Section -->
+    <section id="eligibility" class="max-w-7xl mx-auto px-4 py-12 scroll-mt-20">
+        <div class="bg-gradient-to-r from-slate-900 to-slate-950 p-6 md:p-8 rounded-3xl border border-slate-800 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-telkom-950/20 rounded-full blur-3xl -z-10"></div>
+            
+            <div class="max-w-3xl">
+                <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-2">
+                    🎯 Cari Tahu Jalur Terbaikmu Sekarang
+                </h2>
+                <p class="text-slate-400 text-xs md:text-sm mb-6">
+                    Masukkan kondisi aslimu untuk mendapatkan analisis kelayakan beasiswa instan dari semua brosur resmi Tel-U 2026.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tahun Kelulusan SMA</label>
+                    <select id="calc-grad" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-telkom-500 text-white font-medium">
+                        <option value="2026">Lulusan Baru (2026)</option>
+                        <option value="2025">Gap Year 1 Tahun (2025)</option>
+                        <option value="2024">Gap Year 2 Tahun (2024)</option>
+                        <option value="2023">Lulusan 2023 atau Lebih Lama</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Rata-Rata Nilai Rapor</label>
+                    <input type="number" id="calc-rapor" placeholder="Contoh: 78" min="0" max="100" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-telkom-500 text-white font-medium">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Punya Sertifikat Juara/Organisasi?</label>
+                    <select id="calc-cert" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-telkom-500 text-white font-medium">
+                        <option value="yes">Ya, Ada (Akademik / Non-Akademik)</option>
+                        <option value="no">Tidak Ada Sertifikat</option>
+                    </select>
+                </div>
+                <div>
+                    <button onclick="calculateEligibility()" class="w-full bg-gradient-to-r from-telkom-600 to-rose-600 hover:from-telkom-700 hover:to-rose-700 text-white font-bold py-3 px-4 rounded-xl transition duration-300 text-sm shadow-md shadow-telkom-900/30 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Analisis Peluang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Box -->
+            <div id="calc-result" class="hidden mt-8 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 transition-all duration-300">
+                <div class="flex items-start space-x-4">
+                    <div id="calc-icon-box" class="p-3 rounded-xl bg-telkom-950 text-telkom-400">
+                        <i id="calc-icon" class="fa-solid fa-circle-info text-2xl"></i>
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <h3 id="calc-title" class="font-display font-bold text-lg text-white">Menganalisis data...</h3>
+                        <p id="calc-desc" class="text-xs text-slate-300 leading-relaxed"></p>
+                        <div id="calc-badges" class="flex flex-wrap gap-2 pt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranking & Interactive Display Section -->
+    <section id="ranking-section" class="max-w-7xl mx-auto px-4 py-12 scroll-mt-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <h2 class="font-display text-3xl font-black text-white">
+                    🏆 Peta Rangking Beasiswa Telkom University 2026
+                </h2>
+                <p class="text-slate-400 text-sm mt-1">
+                    Urutkan beasiswa secara cerdas berdasarkan preferensimu untuk memulai langkah pendaftaran yang taktis.
+                </p>
+            </div>
+            <!-- Sorting Toggles -->
+            <div class="flex items-center bg-slate-900 p-1.5 rounded-2xl border border-slate-800 self-start md:self-auto">
+                <button id="btn-sort-benefit" onclick="sortScholarships('benefit')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 bg-telkom-600 text-white shadow-md shadow-telkom-950">
+                    <i class="fa-solid fa-gift"></i>
+                    <span>Paling Bagus (Benefit)</span>
+                </button>
+                <button id="btn-sort-ease" onclick="sortScholarships('ease')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 text-slate-400 hover:text-slate-200">
+                    <i class="fa-solid fa-door-open"></i>
+                    <span>Paling Mudah Masuk</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Warning Alert for Gap Year S1 seekers -->
+        <div class="bg-amber-950/40 border border-amber-900/60 rounded-2xl p-4 flex items-start space-x-3 mb-8">
+            <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg mt-0.5"></i>
+            <div>
+                <h4 class="font-bold text-sm text-amber-200">🛡️ Filter Anti-D3 Diaktifkan (S1/D4 Fokus)</h4>
+                <p class="text-xs text-amber-300/90 mt-0.5">
+                    Semua beasiswa di bawah ini menawarkan program **S1** atau **D4** (S1 Terapan)[cite: 2, 6]. Jika kamu mendaftar di Fakultas Ilmu Terapan Kampus Utama, pastikan memilih program studi **S1 Terapan Digital Creative Multimedia** atau **S1 Terapan Sistem Informasi Kota Cerdas** agar terhindar dari jenjang D3[cite: 6].
                 </p>
             </div>
         </div>
 
-        <div id="kotak-bangun" class="wadah-modul hidden animasi-muncul">
-            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm card-glow border border-slate-100 dark:border-slate-700">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-2xl bg-orange-100 dark:bg-orange-900/50 p-2 rounded-xl">📐</span>
-                    <h2 class="text-xl font-extrabold text-orange-600 dark:text-orange-400">Rumus & Bentuk Bangun Datar</h2>
+        <!-- Dynamic Scholarship Cards Grid -->
+        <div id="scholarship-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-500">
+            <!-- Cards will be dynamically rendered and re-ordered here -->
+        </div>
+    </section>
+
+
+    <!-- Scholarship Detail Modal -->
+    <div id="detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden transition-all duration-300">
+        <div class="bg-darkspace-800 border border-slate-700 max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl transform scale-95 transition-all duration-300">
+            <!-- Modal Header -->
+            <div id="modal-header-bg" class="p-6 text-white relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white transition duration-200">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="flex items-center space-x-3 mb-2">
+                    <span id="modal-badge" class="bg-white/20 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">Beasiswa 100%</span>
+                </div>
+                <h3 id="modal-title" class="font-display text-2xl font-black">Detail Beasiswa</h3>
+                <p id="modal-subtitle" class="text-xs text-white/80 mt-1">Telkom University Admission 2026</p>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 space-y-6 max-h-[400px] overflow-y-auto">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                        <span class="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Tahun Kelulusan</span>
+                        <strong id="modal-years" class="text-xs text-slate-200">2024, 2025, 2026</strong>
+                    </div>
+                    <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                        <span class="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Biaya Pendaftaran</span>
+                        <strong id="modal-fee" class="text-xs text-slate-200">Gratis (Free)</strong>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-2" id="kotakPilihanBangun"></div>
-                    
-                    <div class="md:col-span-2 bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 rounded-2xl p-6 flex flex-col justify-center min-h-[300px]">
-                        <div id="pesanKosongBangun" class="text-center p-6">
-                            <span class="text-5xl block mb-3">👈</span>
-                            <p class="text-slate-500 dark:text-slate-400 font-bold text-sm">Silakan klik salah satu nama bentuk di samping untuk memunculkan gambar dan rumusnya!</p>
-                        </div>
-                        <div id="kontenDetailBangun" class="hidden"></div>
+                <div class="space-y-2">
+                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider">📋 Syarat Utama Pendaftaran:</h4>
+                    <ul id="modal-requirements" class="space-y-2 text-xs text-slate-300 list-disc list-inside">
+                        <!-- Dynamic list -->
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider">📅 Agenda Timeline Penting (2026):</h4>
+                    <div id="modal-timeline" class="space-y-3">
+                        <!-- Dynamic timeline steps -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="kotak-peluang" class="wadah-modul hidden animasi-muncul">
-            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm card-glow border border-slate-100 dark:border-slate-700">
-                
-                <div class="flex p-1.5 bg-slate-100 dark:bg-slate-700 rounded-2xl mb-6">
-                    <button id="tombolMenuPermutasi" class="flex-1 py-3 text-xs md:text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-600 text-blue-600 dark:text-white shadow-sm">🔢 Susun Angka (Urutan Penting)</button>
-                    <button id="tombolMenuKombinasi" class="flex-1 py-3 text-xs md:text-sm font-bold rounded-xl transition-all text-slate-500 dark:text-slate-400">🤝 Pilih Kelompok (Urutan Bebas)</button>
-                </div>
-
-                <div class="bg-blue-50/50 dark:bg-slate-900/30 border border-blue-100 dark:border-slate-700/50 p-4 rounded-2xl mb-6">
-                    <p id="teksInfoPeluang" class="text-xs md:text-sm font-bold text-blue-800 dark:text-blue-300 leading-relaxed"></p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Total Semua Benda (n)</label>
-                        <input type="number" id="inputPeluangN" value="4" class="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-lg font-bold focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Banyak Benda yang Diambil (r)</label>
-                        <input type="number" id="inputPeluangR" value="2" class="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-lg font-bold focus:outline-none">
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-indigo-600 to-blue-600 text-white p-6 rounded-3xl text-center shadow-md">
-                    <p id="labelJudulHasilPeluang" class="text-xs font-bold uppercase tracking-widest text-blue-100">Hasil Susunan Berbeda</p>
-                    <p id="angkaHasilPeluang" class="text-6xl font-black my-2">12</p>
-                    <p id="penjelasanTextPeluang" class="text-xs md:text-sm font-medium text-blue-100"></p>
-                </div>
-
-                <div class="mt-4 text-center text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                    💡 Tanda seru (!) artinya perkalian mundur. Contoh: 3! = 3 × 2 × 1 = 6
-                </div>
-            </div>
-        </div>
-
-        <div id="kotak-pecahan" class="wadah-modul hidden animasi-muncul">
-            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm card-glow border border-slate-100 dark:border-slate-700 space-y-6">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 p-4 rounded-2xl">
-                        <p class="font-extrabold text-amber-700 dark:text-amber-400 text-sm mb-1">🍕 Apa itu Pecahan?</p>
-                        <p class="text-xs font-medium text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Angka atas dinamakan <strong>Pembilang</strong> (bagian yang kita ambil). Angka bawah dinamakan <strong>Penyebut</strong> (total seluruh potongan kue pizza).
-                        </p>
-                    </div>
-                    <div class="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 p-4 rounded-2xl">
-                        <p class="font-extrabold text-emerald-700 dark:text-emerald-400 text-sm mb-1">💡 Tips Cepat Membandingkan</p>
-                        <p class="text-xs font-medium text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Cukup lakukan <strong>perkalian silang</strong>! Kalikan angka atas sebelah kiri dengan angka bawah sebelah kanan, lalu bandingkan hasilnya dengan sisi sebaliknya.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-purple-50 dark:bg-purple-950/20 border-2 border-purple-100 dark:border-purple-900/50 rounded-3xl p-6 text-center">
-                    <h3 class="text-lg font-black text-purple-700 dark:text-purple-400 tracking-tight">🎯 Game Tebak: Mana Kue yang Lebih Besar?</h3>
-                    
-                    <div class="flex justify-center gap-4 my-4 text-xs font-bold">
-                        <div class="bg-white dark:bg-slate-700 border dark:border-slate-600 px-4 py-2 rounded-xl text-emerald-600 dark:text-emerald-400 shadow-sm">⭐ Skor: <span id="angkaSkorPecahan">0</span></div>
-                        <div class="bg-white dark:bg-slate-700 border dark:border-slate-600 px-4 py-2 rounded-xl text-purple-600 dark:text-purple-400 shadow-sm">🔥 Beruntun: <span id="angkaStreakPecahan">0</span></div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-8 my-6">
-                        <div class="flex flex-col items-center">
-                            <div id="gambarPieKiri" class="lingkaran-pecahan mb-3"></div>
-                            <div id="teksAngkaPecahanKiri" class="text-3xl font-black text-slate-700 dark:text-white"></div>
-                        </div>
-
-                        <div class="flex gap-2 sm:flex-col md:flex-row">
-                            <button data-tombol-pilih="<" class="tombol-jawab-pecahan bg-white dark:bg-slate-700 hover:bg-purple-600 hover:text-white dark:text-white border px-6 py-4 rounded-2xl font-black text-xl shadow-sm transition-all">&lt;</button>
-                            <button data-tombol-pilih="=" class="tombol-jawab-pecahan bg-white dark:bg-slate-700 hover:bg-purple-600 hover:text-white dark:text-white border px-6 py-4 rounded-2xl font-black text-xl shadow-sm transition-all">=</button>
-                            <button data-tombol-pilih=">" class="tombol-jawab-pecahan bg-white dark:bg-slate-700 hover:bg-purple-600 hover:text-white dark:text-white border px-6 py-4 rounded-2xl font-black text-xl shadow-sm transition-all">&gt;</button>
-                        </div>
-
-                        <div class="flex flex-col items-center">
-                            <div id="gambarPieKanan" class="lingkaran-pecahan mb-3"></div>
-                            <div id="teksAngkaPecahanKanan" class="text-3xl font-black text-slate-700 dark:text-white"></div>
-                        </div>
-                    </div>
-
-                    <div id="kotakPesanBalikPecahan" class="text-center p-4 rounded-xl text-xs md:text-sm font-bold min-h-[56px] flex items-center justify-center bg-white dark:bg-slate-700 border shadow-sm text-slate-500 dark:text-slate-300">
-                        ✨ Ayo klik tombol perbandingan di atas!
-                    </div>
-                </div>
+            <!-- Modal Footer -->
+            <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between">
+                <span class="text-[11px] text-slate-500">Sumber: Brosur Resmi Telkom University</span>
+                <a id="modal-apply-btn" href="https://smb.telkomuniversity.ac.id" target="_blank" class="bg-telkom-600 hover:bg-telkom-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition duration-300 flex items-center space-x-1">
+                    <span>Daftar Sekarang</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-darkspace-950 border-t border-slate-900 py-12 px-4 mt-20 text-center text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto space-y-4">
+            <div class="flex justify-center space-x-6 text-slate-400 text-base mb-2">
+                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p>Direkomendasikan secara khusus untuk Calon Mahasiswa Gap Year S1 / D4 angkatan 2026.</p>
+            <p class="text-slate-600">Disclaimer: Aplikasi ini menggunakan data dari dokumen brosur Universitas Telkom 2026. Jadwal serta ketentuan beasiswa dapat berubah sewaktu-waktu sesuai kebijakan panitia SMB Telkom.</p>
+            <p class="text-slate-600 font-medium">© 2026 Tel-U ScholarPath Portal. Created with ❤️ for future leaders.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Section -->
     <script>
-        (function(){
-            // ========== 1. SISTEM GANTI TEMA (DARK/LIGHT MODE) ==========
-            const docHtml = document.documentElement;
-            const btnTema = document.getElementById('tombolGantiTema');
-            const ikonTema = document.getElementById('ikonTema');
-            const teksTema = document.getElementById('teksTema');
-            
-            function pasangTema(pilihan) {
-                if(pilihan === 'dark') {
-                    docHtml.classList.add('dark');
-                    ikonTema.innerText = '☀️';
-                    teksTema.innerText = 'Mode Terang';
-                } else {
-                    docHtml.classList.remove('dark');
-                    ikonTema.innerText = '🌙';
-                    teksTema.innerText = 'Mode Gelap';
-                }
+        // Data Beasiswa dari Brosur-Brosur 2026
+        const scholarships = [
+            {
+                id: 'endowment',
+                title: 'Tel-U Endowment Fund Scholarship',
+                badge: 'Full 100% Bebas Biaya',
+                badgeColor: 'bg-emerald-950 text-emerald-400 border border-emerald-500/30',
+                targetYears: 'Lulusan 2024, 2025, 2026 (Gap Year Terbuka)',
+                pembelianPIN: 'Gratis (Free Pendaftaran)',
+                closeDate: '2026-06-10T23:59:59+07:00', // Sesuai brosur: 10 Juni 2026
+                benefitRank: 1,
+                easeRank: 3,
+                iconClass: 'fa-solid fa-hand-holding-dollar',
+                colorClasses: 'from-emerald-500 to-teal-600',
+                requirements: [
+                    'Siswa SMA/SMK/MA/Sederajat lulusan tahun 2024, 2025, atau 2026[cite: 3].',
+                    'Nilai rapor semester 1 sampai 5 minimal rata-rata 70[cite: 3].',
+                    'Wajib melampirkan Dokumen Penghasilan Orang Tua (slip gaji/surat keterangan penghasilan)[cite: 3].',
+                    'Mengikuti akun Instagram @endowmentfund_telkomuniv dan mengunggah buktinya[cite: 3].',
+                    'Sertifikat prestasi akademik/non-akademik bersifat opsional (tidak wajib)[cite: 3].'
+                ],
+                timeline: [
+                    { date: '4 Mei - 10 Juni 2026', desc: 'Pendaftaran online di website SMB Tel-U[cite: 3]' },
+                    { date: '17 Juni 2026', desc: 'Pengumuman Kelulusan Seleksi Berkas Administrasi[cite: 3]' },
+                    { date: '20 Juni 2026', desc: 'Ujian Tes Online Skolastik (Berbasis Komputer)[cite: 3]' },
+                    { date: '24 - 26 Juni 2026', desc: 'Sesi Wawancara Online bagi yang lolos tes tulis[cite: 3]' },
+                    { date: '30 Juni 2026', desc: 'Pengumuman Kelulusan Akhir Beasiswa 100%[cite: 3]' }
+                ]
+            },
+            {
+                id: 'prestasi',
+                title: 'Beasiswa Jalur Prestasi Akademik / Non-Akademik',
+                badge: 'Full 100% & Fast Track',
+                badgeColor: 'bg-indigo-950 text-indigo-400 border border-indigo-500/30',
+                targetYears: 'Siswa SMA/SMK/MA lulusan 3 tahun terakhir (2024-2026)',
+                pembelianPIN: 'Rp 200.000 (Maksimal pilih 5 program studi)',
+                closeDate: '2026-06-12T23:59:59+07:00', // Sesuai brosur: 12 Juni 2026
+                benefitRank: 2,
+                easeRank: 4,
+                iconClass: 'fa-solid fa-medal',
+                colorClasses: 'from-indigo-500 to-purple-600',
+                requirements: [
+                    'Siswa lulusan SMA/SMK/MA 3 tahun terakhir (2024, 2025, 2026)[cite: 7].',
+                    'Nilai Rapor semester 1 s/d 5 minimal rata-rata 75[cite: 7].',
+                    'Wajib melampirkan minimal satu sertifikat bukti juara/prestasi kompetisi (seperti OSN, LKS, FLS2N, atau lomba internasional)[cite: 7], ATAU surat keterangan kepengurusan organisasi siswa (OSIS/Pramuka/PMR/Paskibra/Kerohanian)[cite: 7].',
+                    'Bisa mendaftar ke Program Fast Track (Lulus S1+S2 hanya dalam waktu 5 tahun)[cite: 7].'
+                ],
+                timeline: [
+                    { date: '11 Mei - 12 Juni 2026', desc: 'Periode pendaftaran & unggah berkas prestasi[cite: 7]' },
+                    { date: 'Segera', desc: 'Uji Pemetaan Pengembangan Diri Online (Jadwal menyusul)[cite: 2]' },
+                    { date: 'Juni/Juli 2026', desc: 'Pengumuman kelulusan hasil review portofolio prestasi' }
+                ]
+            },
+            {
+                id: 'rapor_regional',
+                title: 'Jalur Rapor Tel-U Surabaya & Jakarta',
+                badge: 'Paling Mudah - Tanpa Tes',
+                badgeColor: 'bg-amber-950 text-amber-400 border border-amber-500/30',
+                targetYears: 'Siswa SMA/SMK/MA sederajat lulusan 2024, 2025, 2026',
+                pembelianPIN: 'Rp 300.000 (Maksimal pilih 5 program studi)',
+                closeDate: '2026-06-09T23:59:59+07:00', // Sesuai brosur TUS: 9 Juni 2026
+                benefitRank: 3,
+                easeRank: 1,
+                iconClass: 'fa-solid fa-file-invoice',
+                colorClasses: 'from-amber-500 to-orange-600',
+                requirements: [
+                    'Siswa SMA/SMK/MA sederajat lulusan tahun 2024, 2025, atau 2026[cite: 2, 9].',
+                    'Nilai rapor semester 1-5 minimal rata-rata 70 (Tanpa batasan jurusan sekolah)[cite: 2, 9].',
+                    'Tanpa tes tertulis atau ujian masuk online lainnya[cite: 2, 9].',
+                    'Tersedia Beasiswa Pintar dengan potongan biaya kuliah berkisar hingga 100%[cite: 2, 9].',
+                    'Sertifikat prestasi tambahan bersifat opsional (tidak wajib)[cite: 2, 9].'
+                ],
+                timeline: [
+                    { date: '26 Mei - 9 Juni 2026', desc: 'Pendaftaran Jalur Rapor Tel-U Surabaya (TUS)[cite: 9]' },
+                    { date: '27 Mei - 3 Juni 2026', desc: 'Diskon 50% PIN pendaftaran selama periode tertentu[cite: 9]' },
+                    { date: '11 Juni 2026', desc: 'Pengumuman Kelulusan Jalur Rapor Regional Surabaya[cite: 9]' }
+                ]
+            },
+            {
+                id: 'utbk',
+                title: 'Jalur Seleksi Skor Nilai UTBK',
+                badge: 'Tanpa Tes - Pakai Hasil SNBT',
+                badgeColor: 'bg-sky-950 text-sky-400 border border-sky-500/30',
+                targetYears: 'Lulusan SMA/SMK/MA 3 tahun terakhir (2024, 2025, 2026)',
+                pembelianPIN: 'Rp 400.000',
+                closeDate: '2026-06-19T23:59:59+07:00', // Sesuai brosur: 19 Juni 2026
+                benefitRank: 4,
+                easeRank: 2,
+                iconClass: 'fa-solid fa-square-poll-vertical',
+                colorClasses: 'from-sky-500 to-blue-600',
+                requirements: [
+                    'Siswa lulusan SMA/SMK/MA 3 tahun terakhir (2024, 2025, 2026)[cite: 8].',
+                    'Wajib mengunggah sertifikat lembar nilai asli hasil ujian UTBK-SNBT yang diperoleh dari panitia pusat[cite: 8].',
+                    'Tanpa memerlukan ujian tulis tambahan atau tes online dari kampus[cite: 8].',
+                    'Tersedia bantuan Beasiswa Pintar (potongan biaya operasional kuliah) sesuai kuota[cite: 8].'
+                ],
+                timeline: [
+                    { date: '20 Mei - 19 Juni 2026', desc: 'Periode unggah sertifikat UTBK secara mandiri[cite: 8]' },
+                    { date: 'Juni 2026', desc: 'Verifikasi berkas & nilai skor UTBK oleh tim admisi' },
+                    { date: 'Akhir Juni 2026', desc: 'Pengumuman kelulusan penempatan jurusan berdasarkan skor UTBK' }
+                ]
+            }
+        ];
+
+        let currentSort = 'benefit';
+
+        window.onload = function() {
+            renderScholarships();
+            setInterval(updateAllTimers, 1000);
+            updateAllTimers();
+        };
+
+        // Render Scholarship Cards
+        function renderScholarships() {
+            const container = document.getElementById('scholarship-container');
+            container.innerHTML = '';
+
+            // Sort data
+            let sortedData = [...scholarships];
+            if (currentSort === 'benefit') {
+                sortedData.sort((a, b) => a.benefitRank - b.benefitRank);
+            } else {
+                sortedData.sort((a, b) => a.easeRank - b.easeRank);
             }
 
-            const temaTersimpan = localStorage.getItem('tema_pilihan_matematika') || 'light';
-            pasangTema(temaTersimpan);
+            sortedData.forEach((item, index) => {
+                const rankText = currentSort === 'benefit' ? `Benefit Rank #${item.benefitRank}` : `Kemudahan Rank #${item.easeRank}`;
+                const card = document.createElement('div');
+                card.className = `bg-slate-900 border border-slate-800 hover:border-telkom-500/50 rounded-3xl p-6 transition-all duration-300 relative flex flex-col justify-between group overflow-hidden`;
+                card.setAttribute('data-id', item.id);
 
-            btnTema.addEventListener('click', () => {
-                const apakahGelap = docHtml.classList.contains('dark');
-                const temaBaru = apakahGelap ? 'light' : 'dark';
-                localStorage.setItem('tema_pilihan_matematika', temaBaru);
-                pasangTema(temaBaru);
-            });
+                card.innerHTML = `
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-telkom-950/20 to-transparent rounded-full -z-10 group-hover:scale-110 transition duration-300"></div>
+                    <div>
+                        <!-- Badge & Rank -->
+                        <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full ${item.badgeColor}">
+                                ${item.badge}
+                            </span>
+                            <span class="text-xs font-bold text-telkom-500 bg-telkom-950/50 px-2.5 py-1 rounded-lg border border-telkom-900/40">
+                                ${rankText}
+                            </span>
+                        </div>
 
-            // ========== 2. SISTEM PERPINDAHAN TAB MENU ==========
-            const koleksiWadahTab = {
-                kpk: document.getElementById('kotak-kpk'),
-                bangun: document.getElementById('kotak-bangun'),
-                peluang: document.getElementById('kotak-peluang'),
-                pecahan: document.getElementById('kotak-pecahan')
-            };
-            const barisTombolTab = document.querySelectorAll('[data-buka-tab]');
-
-            function pindahTabUtama(idTabTujuan) {
-                Object.keys(koleksiWadahTab).forEach(kunci => {
-                    koleksiWadahTab[kunci].classList.add('hidden');
-                });
-                koleksiWadahTab[idTabTujuan].classList.remove('hidden');
-                
-                barisTombolTab.forEach(btn => {
-                    if(btn.getAttribute('data-buka-tab') === idTabTujuan) {
-                        btn.classList.add('tab-aktif');
-                    } else {
-                        btn.classList.remove('tab-aktif');
-                    }
-                });
-                if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
-            }
-
-            barisTombolTab.forEach(btn => {
-                btn.addEventListener('click', () => pindahTabUtama(btn.getAttribute('data-buka-tab')));
-            });
-
-            // ========== 3. LOGIKA HITUNGAN: KPK & FPB ==========
-            const inputA = document.getElementById('inputAngkaA');
-            const inputB = document.getElementById('inputAngkaB');
-            const hKPK = document.getElementById('teksHasilKPK');
-            const hFPB = document.getElementById('teksHasilFPB');
-            const wadahLangkah = document.getElementById('kotakLangkahDetail');
-
-            function cariFaktorPrima(angka) {
-                let n = angka;
-                let hasil = {};
-                let pembagi = 2;
-                while (pembagi * pembagi <= n) {
-                    while (n % pembagi === 0) {
-                        hasil[pembagi] = (hasil[pembagi] || 0) + 1;
-                        n /= pembagi;
-                    }
-                    pembagi++;
-                }
-                if (n > 1) hasil[n] = (hasil[n] || 0) + 1;
-                return hasil;
-            }
-
-            function ubahTeksPangkat(objFaktor) {
-                let susunan = [];
-                const simbolPangkat = ['⁰','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹'];
-                Object.keys(objFaktor).sort((x, y) => x - y).forEach(prima => {
-                    let pangkat = objFaktor[prima];
-                    if (pangkat === 1) {
-                        susunan.push(prima);
-                    } else {
-                        let teksPkt = pangkat.toString().split('').map(v => simbolPangkat[v] || v).join('');
-                        susunan.push(`${prima}${teksPkt}`);
-                    }
-                });
-                return susunan.length > 0 ? susunan.join(' × ') : '1';
-            }
-
-            function kalkulasiKpkFpb() {
-                let valA = Math.abs(parseInt(inputA.value)) || 1;
-                let valB = Math.abs(parseInt(inputB.value)) || 1;
-                
-                let fA = cariFaktorPrima(valA);
-                let fB = cariFaktorPrima(valB);
-                
-                // Cari KPK
-                let gabungSemuaPrima = [...new Set([...Object.keys(fA), ...Object.keys(fB)])];
-                let objKPK = {};
-                let totalKPK = 1;
-                gabungSemuaPrima.forEach(p => {
-                    let pkt = Math.max(fA[p] || 0, fB[p] || 0);
-                    objKPK[p] = pkt;
-                    totalKPK *= Math.pow(parseInt(p), pkt);
-                });
-
-                // Cari FPB
-                let objFPB = {};
-                let totalFPB = 1;
-                Object.keys(fA).forEach(p => {
-                    if (fB[p]) {
-                        let pkt = Math.min(fA[p], fB[p]);
-                        objFPB[p] = pkt;
-                        totalFPB *= Math.pow(parseInt(p), pkt);
-                    }
-                });
-
-                hKPK.innerText = totalKPK;
-                hFPB.innerText = totalFPB;
-
-                wadahLangkah.innerHTML = `
-                    <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200/60 dark:border-slate-700">🌲 <strong>Pohon Faktor:</strong><br>• Angka ${valA} = <span class="text-blue-600 dark:text-blue-400 font-bold">${ubahTeksPangkat(fA)}</span><br>• Angka ${valB} = <span class="text-blue-600 dark:text-blue-400 font-bold">${ubahTeksPangkat(fB)}</span></div>
-                    <div class="bg-emerald-50/60 dark:bg-emerald-950/10 p-3 rounded-xl border border-emerald-100 dark:border-emerald-950/40">🟩 <strong>Langkah Jelas KPK:</strong><br>Kita kumpulkan semua jenis angka faktor dengan pangkat paling besar yaitu: <span class="font-bold">${ubahTeksPangkat(objKPK)}</span>. Hasil kalinya adalah <strong>${totalKPK}</strong>.</div>
-                    <div class="bg-rose-50/60 dark:bg-rose-950/10 p-3 rounded-xl border border-rose-100 dark:border-rose-950/40">🟥 <strong>Langkah Jelas FPB:</strong><br>Kita cari angka faktor yang kembar di kedua baris lalu pilih pangkat yang paling kecil yaitu: <span class="font-bold">${Object.keys(objFPB).length ? ubahTeksPangkat(objFPB) : 'Tidak ada angka kembar (maka FPB adalah 1)'}</span>. Hasilnya adalah <strong>${totalFPB}</strong>.</div>
-                `;
-            }
-
-            inputA.addEventListener('input', kalkulasiKpkFpb);
-            inputB.addEventListener('input', kalkulasiKpkFpb);
-            kalkulasiKpkFpb();
-
-            // ========== 4. LOGIKA DATA: BANGUN DATAR ==========
-            const dataDaftarBangun = [
-                {id:'kotak', name:'Persegi (Kotak)', icon:'⬛', desc:'4 Sisi sama panjang', keliling:'4 × s', luas:'s × s', visual:'<div class="w-32 h-32 bg-blue-500/80 dark:bg-blue-600 rounded-xl border-4 border-blue-700 flex items-center justify-center relative"><span class="absolute -bottom-6 text-xs font-bold text-slate-700 dark:text-slate-300">sisi (s)</span><span class="absolute -left-6 text-xs font-bold text-slate-700 dark:text-slate-300">s</span></div>', info:'Sisi (s) adalah garis pinggir pembatas kotak. Semua panjang sisi nilainya sama.'},
-                {id:'panjang', name:'Persegi Panjang', icon:'📏', desc:'Sisi panjang & pendek', keliling:'2 × (p + l)', luas:'p × l', visual:'<div class="w-44 h-24 bg-emerald-500/80 dark:bg-emerald-600 rounded-xl border-4 border-emerald-700 flex items-center justify-center relative"><span class="absolute -bottom-6 text-xs font-bold text-slate-700 dark:text-slate-300">Panjang (p)</span><span class="absolute -right-14 text-xs font-bold text-slate-700 dark:text-slate-300">Lebar (l)</span></div>', info:'Panjang (p) adalah bagian tidur yang panjang, Lebar (l) adalah bagian berdiri yang pendek.'},
-                {id:'tiga', name:'Segitiga', icon:'🔺', desc:'Mempunyai 3 pojok garis', keliling:'Sisi A + Sisi B + Sisi C', luas:'½ × a × t', visual:'<svg width="130" height="110" viewBox="0 0 120 100" class="mx-auto"><path d="M60 10 L110 90 L10 90 Z" fill="#f97316" stroke="#c2410c" stroke-width="4"/><line x1="60" y1="10" x2="60" y2="90" stroke="#2563eb" stroke-dasharray="4" stroke-width="2"/></svg><div class="flex gap-8 text-[11px] font-bold text-slate-500 mt-1"><span>Lebar bawah = Alas (a)</span> <span class="text-blue-600">Garis Putus = Tinggi (t)</span></div>', info:'Alas (a) adalah lantai bawah segitiga, Tinggi (t) adalah tiang tegak lurus dari bawah ke puncak teratas.'},
-                {id:'bundar', name:'Lingkaran', icon:'⚪', desc:'Bulat penuh simetris', keliling:'2 × π × r atau π × d', luas:'Arah \(\pi \times r^2\)', visual:'<div class="w-28 h-28 bg-purple-500/80 dark:bg-purple-600 rounded-full border-4 border-purple-700 flex items-center justify-center relative"><div class="w-1/2 h-1 bg-red-600 absolute right-0"></div><div class="w-3 h-3 bg-white rounded-full z-10"></div><span class="absolute right-4 top-10 text-xs font-bold text-white">r</span></div>', info:'Jari-jari (r) adalah jarak dari titik pusat tengah ke pinggir luar bulat. Diameter (d) adalah panjang garis lurus ujung ke ujung melewati tengah.'}
-            ];
-
-            const wadahMenuBangun = document.getElementById('kotakPilihanBangun');
-            const placeholderBgn = document.getElementById('pesanKosongBangun');
-            const detailBgn = document.getElementById('kontenDetailBangun');
-            let bangunAktifId = null;
-
-            function gambarMenuPilihan() {
-                let htmlTeks = '';
-                dataDaftarBangun.forEach(item => {
-                    let cekAktif = bangunAktifId === item.id;
-                    htmlTeks += `
-                        <button data-klik-bgn="${item.id}" class="w-full text-left p-3.5 rounded-xl flex items-center gap-3 transition-all border ${cekAktif ? 'bg-orange-500 text-white border-orange-600 shadow-md scale-[1.02]' : 'bg-slate-50 dark:bg-slate-700/60 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700'}">
-                            <span class="text-2xl">${item.icon}</span>
+                        <!-- Title and Icon -->
+                        <div class="flex items-start space-x-3.5 mb-4">
+                            <div class="bg-gradient-to-tr ${item.colorClasses} text-white p-3.5 rounded-2xl shadow-md shrink-0">
+                                <i class="${item.iconClass} text-xl"></i>
+                            </div>
                             <div>
-                                <p class="font-extrabold text-xs md:text-sm">${item.name}</p>
-                                <p class="${cekAktif ? 'text-orange-100' : 'text-slate-400'} text-[11px] font-medium">${item.desc}</p>
-                            </div>
-                        </button>
-                    `;
-                });
-                wadahMenuBangun.innerHTML = htmlTeks;
-
-                document.querySelectorAll('[data-klik-bgn]').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        bangunAktifId = btn.getAttribute('data-klik-bgn');
-                        bukaDetailBangun(bangunAktifId);
-                        gambarMenuPilihan();
-                    });
-                });
-            }
-
-            function bukaDetailBangun(id) {
-                let bgn = dataDaftarBangun.find(x => x.id === id);
-                if(!bgn) return;
-                placeholderBgn.classList.add('hidden');
-                detailBgn.classList.remove('hidden');
-                detailBgn.innerHTML = `
-                    <div class="flex flex-col items-center justify-center p-4 bg-white dark:bg-slate-800 rounded-2xl border dark:border-slate-700 shadow-sm">
-                        <div class="mb-6 flex justify-center w-full">${bgn.visual}</div>
-                        <div class="grid grid-cols-2 gap-4 w-full my-2">
-                            <div class="bg-blue-50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-4 rounded-xl text-center">
-                                <p class="text-[11px] font-bold text-blue-500 uppercase tracking-widest">Rumus Keliling Keliling</p>
-                                <p class="text-sm md:text-base font-black text-blue-700 dark:text-blue-300 mt-1">${bgn.id === 'bundar' ? '2 × 22/7 × r' : bgn.keliling}</p>
-                            </div>
-                            <div class="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/40 p-4 rounded-xl text-center">
-                                <p class="text-[11px] font-bold text-emerald-500 uppercase tracking-widest">Rumus Luas (Isi Dalam)</p>
-                                <p class="text-sm md:text-base font-black text-emerald-700 dark:text-emerald-300 mt-1">${bgn.id === 'bundar' ? '22/7 × r × r' : bgn.luas}</p>
+                                <h3 class="font-display font-extrabold text-lg text-white group-hover:text-telkom-400 transition leading-snug">${item.title}</h3>
+                                <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-graduation-cap text-telkom-500 mr-1.5"></i>${item.targetYears}</p>
                             </div>
                         </div>
-                        <div class="bg-slate-50 dark:bg-slate-700/60 p-3 rounded-xl w-full mt-2 border dark:border-slate-600">
-                            <p class="text-xs font-semibold text-slate-600 dark:text-slate-300">💡 <strong>Arti Huruf:</strong> ${bgn.info}</p>
+
+                        <!-- Real-time Countdown Timer Frame -->
+                        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl p-4 mb-4 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Tutup Pendaftaran</span>
+                                <span class="text-[11px] font-bold text-slate-300"><i class="fa-regular fa-calendar-days text-telkom-500 mr-1"></i>${formatTimelineDate(item.closeDate)}</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Sisa Waktu</span>
+                                <span id="timer-${item.id}" class="text-sm font-mono font-bold text-rose-500 animate-pulse">00h 00m 00s</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick requirements list snippet -->
+                        <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+                            <div class="flex items-start space-x-2">
+                                <span class="text-telkom-500 mt-0.5">•</span>
+                                <span>Rapor min: <strong class="text-white">${item.id === 'prestasi' ? '75' : '70'}</strong>[cite: 3, 7]</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <span class="text-telkom-500 mt-0.5">•</span>
+                                <span>PIN Daftar: <strong class="text-white">${item.pembelianPIN}</strong>[cite: 2, 3, 7, 8, 9]</span>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Actions -->
+                    <div class="flex items-center space-x-3">
+                        <button onclick="openModal('${item.id}')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700/80 font-bold py-2.5 px-4 rounded-xl text-xs transition duration-200">
+                            Persyaratan Detail
+                        </button>
+                        <a href="https://smb.telkomuniversity.ac.id" target="_blank" class="bg-telkom-600 hover:bg-telkom-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition duration-200 flex items-center justify-center">
+                            Daftar <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
                 `;
-                if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle sorting categories
+        function sortScholarships(type) {
+            currentSort = type;
+            const btnBenefit = document.getElementById('btn-sort-benefit');
+            const btnEase = document.getElementById('btn-sort-ease');
+
+            if (type === 'benefit') {
+                btnBenefit.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 bg-telkom-600 text-white shadow-md shadow-telkom-950";
+                btnEase.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 text-slate-400 hover:text-slate-200";
+            } else {
+                btnEase.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 bg-telkom-600 text-white shadow-md shadow-telkom-950";
+                btnBenefit.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 text-slate-400 hover:text-slate-200";
             }
-            gambarMenuPilihan();
 
-            // ========== 5. LOGIKA HITUNGAN: PERMUTASI & KOMBINASI ==========
-            let pilihanMenuPeluang = 'permutasi';
-            const mPermutasiBtn = document.getElementById('tombolMenuPermutasi');
-            const mKombinasiBtn = document.getElementById('tombolMenuKombinasi');
-            const teksPeluangInfo = document.getElementById('teksInfoPeluang');
-            const inputN = document.getElementById('inputPeluangN');
-            const inputR = document.getElementById('inputPeluangR');
-            const lblJudulHasilPeluang = document.getElementById('labelJudulHasilPeluang');
-            const angkaHasilPeluang = document.getElementById('angkaHasilPeluang');
-            const penjTextPeluang = document.getElementById('penjelasanTextPeluang');
+            renderScholarships();
+            updateAllTimers();
+        }
 
-            function hitungFaktorialMundur(n) {
-                let h = 1; for(let i = 2; i <= n; i++) h *= i; return h;
-            }
+        // Timer Update Logic
+        function updateAllTimers() {
+            scholarships.forEach(item => {
+                const timerElement = document.getElementById(`timer-${item.id}`);
+                if (!timerElement) return;
 
-            function hitungRumusPeluang() {
-                let n = Math.abs(parseInt(inputN.value)) || 1;
-                let r = Math.abs(parseInt(inputR.value)) || 0;
+                const targetDate = new Date(item.closeDate).getTime();
+                const now = new Date().getTime();
+                const difference = targetDate - now;
 
-                if (r > n) {
-                    angkaHasilPeluang.innerText = '❌';
-                    penjTextPeluang.innerText = 'Angka yang diambil (r) tidak boleh melebihi total benda (n)!';
-                    return;
-                }
-
-                if (pilihanMenuPeluang === 'permutasi') {
-                    lblJudulHasilPeluang.innerText = 'Hasil Susunan Berbeda (Permutasi)';
-                    let hitungAtas = 1;
-                    for (let i = 0; i < r; i++) {
-                        hitungAtas *= (n - i);
-                    }
-                    angkaHasilPeluang.innerText = hitungAtas;
-                    penjTextPeluang.innerText = `Ada total ${hitungAtas} cara berbeda untuk menyusun urutan ${r} juara dari total ${n} orang.`;
+                if (difference <= 0) {
+                    timerElement.innerText = "PENDAFTARAN TUTUP";
+                    timerElement.className = "text-xs font-bold text-slate-600 font-sans";
                 } else {
-                    lblJudulHasilPeluang.innerText = 'Hasil Kelompok Terbentuk (Kombinasi)';
-                    let hitungAtas = 1;
-                    for (let i = 0; i < r; i++) {
-                        hitungAtas *= (n - i);
-                    }
-                    let hasilKomb = Math.round(hitungAtas / hitungFaktorialMundur(r));
-                    angkaHasilPeluang.innerText = hasilKomb;
-                    penjTextPeluang.innerText = `Ada total ${hasilKomb} macam kelompok tim terpisah yang bisa dibuat tanpa memikirkan siapa nomor satu atau duanya.`;
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    timerElement.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
                 }
+            });
+        }
+
+        function formatTimelineDate(isoString) {
+            const date = new Date(isoString);
+            const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        // Interactive Checker Logic
+        function calculateEligibility() {
+            const gradYear = document.getElementById('calc-grad').value;
+            const raporVal = parseFloat(document.getElementById('calc-rapor').value);
+            const hasCert = document.getElementById('calc-cert').value;
+
+            const resultBox = document.getElementById('calc-result');
+            const titleEl = document.getElementById('calc-title');
+            const descEl = document.getElementById('calc-desc');
+            const badgesEl = document.getElementById('calc-badges');
+            const iconEl = document.getElementById('calc-icon');
+            const iconBox = document.getElementById('calc-icon-box');
+
+            if (isNaN(raporVal) || raporVal < 0 || raporVal > 100) {
+                alertNotification("Silakan masukkan nilai rata-rata rapor yang valid (0-100).");
+                return;
             }
 
-            function ubahTabMenuPeluang(jenis) {
-                pilihanMenuPeluang = jenis;
-                if(jenis === 'permutasi') {
-                    mPermutasiBtn.className = "flex-1 py-3 text-xs md:text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-600 text-blue-600 dark:text-white shadow-sm";
-                    mKombinasiBtn.className = "flex-1 py-3 text-xs md:text-sm font-bold rounded-xl transition-all text-slate-500 dark:text-slate-400";
-                    teksPeluangInfo.innerHTML = "<strong>Urutan Diperhatikan:</strong> Contohnya menentukan Juara 1, 2, dan 3 dalam perlombaan. Jika orangnya dibalik, artinya susunan juaranya ikut dinilai berbeda.";
-                } else {
-                    mKombinasiBtn.className = "flex-1 py-3 text-xs md:text-sm font-bold rounded-xl transition-all bg-white dark:bg-slate-600 text-blue-600 dark:text-white shadow-sm";
-                    mPermutasiBtn.className = "flex-1 py-3 text-xs md:text-sm font-bold rounded-xl transition-all text-slate-500 dark:text-slate-400";
-                    teksPeluangInfo.innerHTML = "<strong>Urutan Bebas/Bebas Acak:</strong> Contohnya memilih 2 orang teman untuk diajak makan bareng. Siapa pun yang disebut duluan tidak berpengaruh karena statusnya sama-sama diajak.";
-                }
-                hitungRumusPeluang();
+            resultBox.classList.remove('hidden');
+            badgesEl.innerHTML = '';
+
+            // 1. Check age / grad limit
+            if (gradYear === '2023') {
+                iconEl.className = "fa-solid fa-circle-xmark text-2xl text-rose-500";
+                iconBox.className = "p-3 rounded-xl bg-rose-950/40 text-rose-400";
+                titleEl.innerText = "Status: Kurang Memenuhi Syarat";
+                descEl.innerText = "Brosur pendaftaran program beasiswa 2026 mensyaratkan kelulusan maksimal 3 tahun terakhir (2024, 2025, atau 2026)[cite: 3, 7]. Sebaiknya kamu berkonsultasi dengan bagian admisi di nomor whatsapp resmi apakah ada program ekstensi / transfer.";
+                return;
             }
 
-            mPermutasiBtn.addEventListener('click', () => ubahTabMenuPeluang('permutasi'));
-            mKombinasiBtn.addEventListener('click', () => ubahTabMenuPeluang('kombinasi'));
-            inputN.addEventListener('input', hitungRumusPeluang);
-            inputR.addEventListener('input', hitungRumusPeluang);
-            ubahTabMenuPeluang('permutasi');
+            // 2. Process recommendations
+            let recommended = [];
+            let warnings = [];
 
-            // ========== 6. GAME INTERAKTIF: MEMBANDINGKAN PECAHAN ==========
-            let pecahanKiri = {pembilang: 1, penyebut: 2};
-            let pecahanKanan = {pembilang: 1, penyebut: 3};
-            let poinSkor = 0;
-            let poinStreak = 0;
-            let statusTerkunci = false;
-
-            const bSkor = document.getElementById('angkaSkorPecahan');
-            const bStreak = document.getElementById('angkaStreakPecahan');
-            const visualPieKiri = document.getElementById('gambarPieKiri');
-            const visualPieKanan = document.getElementById('gambarPieKanan');
-            const lblAngkaKiri = document.getElementById('teksAngkaPecahanKiri');
-            const lblAngkaKanan = document.getElementById('teksAngkaPecahanKanan');
-            const notifFeedback = document.getElementById('kotakPesanBalikPecahan');
-
-            function buatWarnaMelingkar(elemenPie, atas, bawah, kodeWarna) {
-                let presentase = (atas / bawah) * 100;
-                elemenPie.style.background = `conic-gradient(${kodeWarna} 0% ${presentase}%, #e2e8f0 ${presentase}% 100%)`;
+            // Tel-U Endowment
+            if (raporVal >= 70) {
+                recommended.push("Endowment Fund (Bagus)");
+            } else {
+                warnings.push("Rapor di bawah 70 untuk Endowment Fund[cite: 3]");
             }
 
-            function renderTampilanGamePecahan() {
-                lblAngkaKiri.innerHTML = `\\(\\frac{${pecahanKiri.pembilang}}{${pecahanKiri.penyebut}}\\)`
-                lblAngkaKanan.innerHTML = `\\(\\frac{${pecahanKanan.pembilang}}{${pecahanKanan.penyebut}}\\)`
-                
-                buatWarnaMelingkar(visualPieKiri, pecahanKiri.pembilang, pecahanKiri.penyebut, '#8b5cf6');
-                buatWarnaMelingkar(visualPieKanan, pecahanKanan.pembilang, pecahanKanan.penyebut, '#d946ef');
-                
-                if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+            // Jalur Rapor regional
+            if (raporVal >= 70) {
+                recommended.push("Jalur Rapor Surabaya/Jakarta (Mudah)");
             }
 
-            function setAcakSoalBaru() {
-                const opsiPenyebut = [2, 3, 4, 5, 6, 8, 10];
-                
-                let ambilBawah = () => opsiPenyebut[Math.floor(Math.random() * opsiPenyebut.length)];
-                
-                pecahanKiri.penyebut = ambilBawah();
-                pecahanKiri.pembilang = Math.floor(Math.random() * (pecahanKiri.penyebut - 1)) + 1;
-                
-                pecahanKanan.penyebut = ambilBawah();
-                pecahanKanan.pembilang = Math.floor(Math.random() * (pecahanKanan.penyebut - 1)) + 1;
-
-                // Cegah soal yang terlalu kembar persis agar seru
-                if(pecahanKiri.pembilang === pecahanKanan.pembilang && pecahanKiri.penyebut === pecahanKanan.penyebut) {
-                    pecahanKanan.pembilang = (pecahanKanan.pembilang % pecahanKanan.penyebut) + 1;
-                }
-
-                renderTampilanGamePecahan();
-                statusTerkunci = false;
-                notifFeedback.innerHTML = '✨ Tebak cepat! Klik simbol &lt;, =, atau &gt; di atas!';
-                notifFeedback.className = "text-center p-4 rounded-xl text-xs md:text-sm font-bold min-h-[56px] flex items-center justify-center bg-white dark:bg-slate-700 border text-slate-500 dark:text-slate-300";
+            // Beasiswa Prestasi
+            if (raporVal >= 75 && hasCert === 'yes') {
+                recommended.push("Beasiswa Prestasi (Sangat Direkomendasikan!)");
+            } else if (raporVal < 75) {
+                warnings.push("Rapor di bawah 75 untuk Beasiswa Prestasi[cite: 7]");
+            } else if (hasCert === 'no') {
+                warnings.push("Beasiswa Prestasi memerlukan sertifikat kepengurusan/juara[cite: 7]");
             }
 
-            function validasiJawabanUser(simbolDipilih) {
-                if(statusTerkunci) return;
-                statusTerkunci = true;
-
-                let nilaiKiri = pecahanKiri.pembilang / pecahanKiri.penyebut;
-                let nilaiKanan = pecahanKanan.pembilang / pecahanKanan.penyebut;
-                
-                let jawabanBenarHarusnya = '=';
-                if(nilaiKiri < nilaiKanan) jawabanBenarHarusnya = '<';
-                else if(nilaiKiri > nilaiKanan) jawabanBenarHarusnya = '>';
-
-                let cekBenar = (simbolDipilih === jawabanBenarHarusnya);
-
-                if(cekBenar) {
-                    poinSkor++;
-                    poinStreak++;
-                    notifFeedback.innerHTML = `🎉 Hebat! Kamu Benar! Hasilnya memang \\(\\frac{${pecahanKiri.pembilang}}{${pecahanKiri.penyebut}} ${jawabanBenarHarusnya} \\frac{${pecahanKanan.pembilang}}{${pecahanKanan.penyebut}}\\).`;
-                    notifFeedback.className = "text-center p-4 rounded-xl text-xs md:text-sm font-bold min-h-[56px] flex items-center justify-center bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 text-emerald-700 dark:text-emerald-400";
-                } else {
-                    poinStreak = 0;
-                    notifFeedback.innerHTML = `❌ Kurang Tepat! Jawaban benar: \\(\\frac{${pecahanKiri.pembilang}}{${pecahanKiri.penyebut}} ${jawabanBenarHarusnya} \\frac{${pecahanKanan.pembilang}}{${pecahanKanan.penyebut}}\\).`;
-                    notifFeedback.className = "text-center p-4 rounded-xl text-xs md:text-sm font-bold min-h-[56px] flex items-center justify-center bg-rose-50 dark:bg-rose-950/30 border border-rose-200 text-rose-700 dark:text-rose-400";
-                }
-
-                bSkor.innerText = poinSkor;
-                bStreak.innerText = poinStreak;
-                if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
-
-                // Otomatis ganti ke soal berikutnya dalam waktu 2,5 detik
-                setTimeout(() => {
-                    setAcakSoalBaru();
-                }, 2500);
+            // Render Output
+            iconEl.className = "fa-solid fa-circle-check text-2xl text-emerald-500";
+            iconBox.className = "p-3 rounded-xl bg-emerald-950/40 text-emerald-400";
+            titleEl.innerText = "Analisis Berhasil Diperoleh!";
+            
+            let resultText = `Berdasarkan kelulusan tahun **${gradYear}** dan rata-rata rapor **${raporVal}**:\n\n`;
+            if (recommended.length > 0) {
+                resultText += `Kamu layak mendaftar di jalur: **${recommended.join(', ')}**.\n`;
+            }
+            if (warnings.length > 0) {
+                resultText += `Hambatan potensial: ${warnings.join('; ')}.`;
             }
 
-            document.querySelectorAll('[data-tombol-pilih]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    validasiJawabanUser(btn.getAttribute('data-tombol-pilih'));
-                });
+            descEl.innerHTML = resultText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+            // Generate interactive badges
+            recommended.forEach(rec => {
+                const badge = document.createElement('span');
+                badge.className = "px-3 py-1 rounded-lg text-[10px] font-bold bg-telkom-950 border border-telkom-900/50 text-telkom-400";
+                badge.innerText = rec.split(' (')[0];
+                badgesEl.appendChild(badge);
+            });
+        }
+
+        // Modal functions
+        function openModal(id) {
+            const item = scholarships.find(s => s.id === id);
+            if (!item) return;
+
+            document.getElementById('modal-title').innerText = item.title;
+            document.getElementById('modal-years').innerText = item.targetYears;
+            document.getElementById('modal-fee').innerText = item.pembelianPIN;
+            document.getElementById('modal-badge').innerText = item.badge;
+            
+            const headerBg = document.getElementById('modal-header-bg');
+            headerBg.className = `p-6 text-white relative bg-gradient-to-r ${item.colorClasses}`;
+
+            // Requirements
+            const reqContainer = document.getElementById('modal-requirements');
+            reqContainer.innerHTML = '';
+            item.requirements.forEach(req => {
+                const li = document.createElement('li');
+                li.innerHTML = req;
+                reqContainer.appendChild(li);
             });
 
-            setAcakSoalBaru();
-        })();
+            // Timeline
+            const timelineContainer = document.getElementById('modal-timeline');
+            timelineContainer.innerHTML = '';
+            item.timeline.forEach((step, idx) => {
+                const stepEl = document.createElement('div');
+                stepEl.className = "flex items-start space-x-3";
+                stepEl.innerHTML = `
+                    <div class="bg-slate-900 border border-slate-700/80 p-1.5 rounded-lg text-telkom-500 shrink-0 font-mono text-[10px] font-bold h-6 w-6 flex items-center justify-center">
+                        ${idx + 1}
+                    </div>
+                    <div>
+                        <strong class="block text-xs text-white">${step.date}</strong>
+                        <span class="text-[11px] text-slate-400">${step.desc}</span>
+                    </div>
+                `;
+                timelineContainer.appendChild(stepEl);
+            });
+
+            const modal = document.getElementById('detail-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.firstElementChild.classList.remove('scale-95');
+                modal.firstElementChild.classList.add('scale-100');
+            }, 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('detail-modal');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        function alertNotification(message) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 z-50 bg-slate-900 border border-rose-500/50 p-4 rounded-2xl shadow-xl flex items-center space-x-3 text-slate-100 text-xs animate-bounce";
+            toast.innerHTML = `
+                <i class="fa-solid fa-circle-exclamation text-rose-500 text-lg"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
     </script>
 </body>
 </html>
