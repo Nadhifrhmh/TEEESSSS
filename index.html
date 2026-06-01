@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tel-U ScholarPath 2026 - Gap Year Edition</title>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <title>Tel-U ScholarPath 2026 - Peta Beasiswa Sederhana</title>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -24,8 +24,6 @@
                     colors: {
                         telkom: {
                             50: '#fff1f2',
-                            100: '#ffe4e6',
-                            200: '#fecdd3',
                             500: '#f43f5e',
                             600: '#e11d48',
                             700: '#be123c',
@@ -33,10 +31,10 @@
                             900: '#881337',
                         },
                         darkspace: {
-                            900: '#0b0f19',
-                            800: '#111827',
-                            700: '#1f2937',
-                            600: '#374151',
+                            900: '#090d16',
+                            800: '#0f1423',
+                            700: '#1e2538',
+                            600: '#2d3748',
                         }
                     }
                 }
@@ -44,644 +42,767 @@
         }
     </script>
     <style>
-        /* Custom Scrollbar */
+        /* Desain Scrollbar Premium */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0b0f19;
+            background: #090d16;
         }
         ::-webkit-scrollbar-thumb {
-            background: #9f1239;
+            background: #be123c;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #e11d48;
-        }
-        /* Custom Glow Animation */
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 15px rgba(225, 29, 72, 0.4); }
-            50% { box-shadow: 0 0 25px rgba(225, 29, 72, 0.7); }
-        }
-        .glow-red {
-            animation: pulse-glow 3s infinite;
         }
     </style>
 </head>
 <body class="bg-darkspace-900 text-slate-100 font-sans min-h-screen selection:bg-telkom-600 selection:text-white overflow-x-hidden">
 
     <!-- Nav Bar -->
-    <nav class="sticky top-0 z-50 bg-darkspace-900/95 backdrop-blur-md border-b border-telkom-900/40 px-4 py-3.5">
+    <nav class="sticky top-0 z-50 bg-darkspace-900/95 backdrop-blur-md border-b border-telkom-900/30 px-4 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="bg-gradient-to-tr from-telkom-700 to-telkom-500 p-2.5 rounded-xl shadow-lg shadow-telkom-900/30">
-                    <i class="fa-solid fa-graduation-cap text-xl text-white"></i>
+                <div class="bg-gradient-to-tr from-telkom-700 to-telkom-500 p-2 rounded-xl shadow-lg shadow-telkom-900/20">
+                    <i class="fa-solid fa-graduation-cap text-lg text-white"></i>
                 </div>
                 <div>
-                    <span class="font-display font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-100 to-telkom-400 bg-clip-text text-transparent">Tel-U ScholarPath</span>
-                    <span class="block text-[10px] text-telkom-500 font-bold uppercase tracking-widest -mt-1">Gap Year S1 Portal</span>
+                    <span class="font-display font-extrabold text-base tracking-tight text-white block">Tel-U ScholarPath 2026</span>
+                    <span class="block text-[9px] text-telkom-500 font-bold uppercase tracking-widest -mt-1">Peta Beasiswa Anak Gap Year</span>
                 </div>
             </div>
-            <div class="flex items-center space-x-4">
-                <span class="hidden md:inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-telkom-950/80 border border-telkom-500/30 text-telkom-400">
-                    <span class="h-2 w-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
-                    Tahun Akademik 2026/2027
-                </span>
-                <a href="#eligibility" class="bg-telkom-600 hover:bg-telkom-700 text-white text-xs md:text-sm px-4 py-2 rounded-lg font-semibold transition duration-300 shadow-md shadow-telkom-900/40">
-                    Cek Peluangmu
-                </a>
+            <div class="flex items-center space-x-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[10px] text-slate-400 font-medium hidden sm:inline">Info Resmi Brosur 2026</span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Banner -->
-    <header class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800/60 bg-gradient-to-b from-darkspace-900 via-darkspace-800 to-darkspace-900">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(159,18,57,0.15),transparent_45%)]"></div>
-        <div class="max-w-7xl mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-full border border-slate-700/80 text-xs text-slate-300">
-                    <span class="bg-telkom-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full">INFO</span>
-                    <span>Gagal SNBT? Tenang, S1 Vokasi & Sarjana Masih Terbuka!</span>
-                </div>
-                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
-                    Raih Beasiswa <br>
-                    <span class="bg-gradient-to-r from-telkom-400 via-rose-500 to-amber-500 bg-clip-text text-transparent">Hingga 100%</span> di Tel-U!
-                </h1>
-                <p class="text-slate-300 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
-                    Spesial untuk kamu lulusan <strong class="text-telkom-400">Gap Year</strong> (3 tahun terakhir) yang menolak menyerah setelah ketolak SNBT. Temukan jalur beasiswa <strong class="text-white">S1 / D4</strong> terbaik tanpa risiko salah masuk D3.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#ranking-section" class="bg-gradient-to-r from-telkom-600 to-rose-600 hover:from-telkom-700 hover:to-rose-700 text-white font-bold px-6 py-3.5 rounded-xl transition duration-300 text-center shadow-lg shadow-telkom-900/50 flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span>Lihat Rangking Beasiswa</span>
-                    </a>
-                    <a href="https://wa.me/6281122339123" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition duration-300 text-center flex items-center justify-center space-x-2">
-                        <i class="fa-brands fa-whatsapp text-emerald-500"></i>
-                        <span>WhatsApp Admisi Resmi</span>
-                    </a>
-                </div>
+    <header class="relative overflow-hidden py-12 md:py-16 border-b border-slate-800/60 bg-gradient-to-b from-darkspace-900 via-darkspace-800 to-darkspace-900">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(159,18,57,0.15),transparent_50%)]"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/90 px-3 py-1.5 rounded-full border border-slate-700 text-xs text-slate-200">
+                <span class="bg-telkom-600 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full">ANTI RIBET</span>
+                <span>Penjelasan Paling Mudah Dipahami Sedunia!</span>
             </div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
+                Mau Kuliah <span class="text-telkom-500">S1 / D4 Gratis</span> di Tel-U? <br>
+                <span class="text-amber-400">Tapi Gap Year & Gagal SNBT?</span>
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                Tenang! Kamu tetap bisa dapat beasiswa hingga 100% tanpa takut salah pilih jurusan D3[cite: 2, 3, 6, 7, 9, 10]. Ikuti panduan di bawah ini untuk melihat beasiswa terbaik beserta jurusan S1 yang boleh kamu ambil!
+            </p>
             
-            <!-- Quick Stats/Anxiety Reducer Grid -->
-            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
-                    <div class="text-telkom-500 text-3xl font-extrabold font-display">2024-2026</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Tahun Lulus Diijinkan</div>
-                    <p class="text-[11px] text-slate-500 mt-2">Aman untuk gap year 1-2 tahun ke belakang.</p>
+            <!-- Penjelasan Istilah untuk Pemula -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 text-left max-w-3xl mx-auto">
+                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-xs">
+                    <strong class="text-emerald-400 block mb-1">👴 Apa itu Gap Year?</strong>
+                    <p class="text-slate-400 text-[11px]">Kamu yang lulus sekolah tahun 2024 atau 2025 yang sempat menunda kuliah[cite: 3]. Di Tel-U, kamu AMAN dan boleh daftar beasiswa[cite: 3, 7]!</p>
                 </div>
-                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
-                    <div class="text-amber-500 text-3xl font-extrabold font-display">S1 / D4</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Target Utama Jenjang</div>
-                    <p class="text-[11px] text-slate-500 mt-2">Tanpa program D3 jika kamu memilih menyaringnya.</p>
+                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-xs">
+                    <strong class="text-amber-400 block mb-1">🎓 S1/D4 vs D3?</strong>
+                    <p class="text-slate-400 text-[11px]">S1 & D4 itu setara Sarjana (keren & cepat kerja)[cite: 2, 6]. Di web ini, semua D3 sudah dibuang agar kamu tidak terjebak salah pilih!</p>
                 </div>
-                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
-                    <div class="text-emerald-500 text-3xl font-extrabold font-display">100%</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Bebas Biaya Kuliah</div>
-                    <p class="text-[11px] text-slate-500 mt-2">Tersedia pada jalur seleksi utama dan prestasi.</p>
-                </div>
-                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 hover:border-telkom-900/50 transition duration-300">
-                    <div class="text-rose-500 text-3xl font-extrabold font-display">Tanpa Tes</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Metode Seleksi Rapor</div>
-                    <p class="text-[11px] text-slate-500 mt-2">Gunakan prestasi rapor sekolah tanpa pusing ujian lagi.</p>
+                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-xs">
+                    <strong class="text-sky-400 block mb-1">🔀 Lintas Jurusan?</strong>
+                    <p class="text-slate-400 text-[11px]">Anak IPS/SMK Non-Teknik pengen masuk komputer? Bisa! Tapi tidak semua jurusan memperbolehkan lintas minat[cite: 2, 6, 9, 10].</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Interactive Calculator Section -->
-    <section id="eligibility" class="max-w-7xl mx-auto px-4 py-12 scroll-mt-20">
-        <div class="bg-gradient-to-r from-slate-900 to-slate-950 p-6 md:p-8 rounded-3xl border border-slate-800 shadow-xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-telkom-950/20 rounded-full blur-3xl -z-10"></div>
-            
-            <div class="max-w-3xl">
-                <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-                    🎯 Cari Tahu Jalur Terbaikmu Sekarang
-                </h2>
-                <p class="text-slate-400 text-xs md:text-sm mb-6">
-                    Masukkan kondisi aslimu untuk mendapatkan analisis kelayakan beasiswa instan dari semua brosur resmi Tel-U 2026.
-                </p>
-            </div>
+    <!-- Pengaturan Profil Pengguna -->
+    <section class="max-w-5xl mx-auto px-4 py-8">
+        <div class="bg-slate-900/80 border-2 border-telkom-900/50 rounded-2xl p-6 shadow-xl text-center space-y-4">
+            <h3 class="font-display font-extrabold text-lg text-white">
+                ⚙️ Langkah 1: Atur Profil Kamu Dulu!
+            </h3>
+            <p class="text-xs text-slate-300">
+                Pilih asal jurusan sekolah dan tahun kelulusanmu agar sistem otomatis menyaring jurusan S1/D4 yang boleh kamu pilih di setiap beasiswa[cite: 2, 3, 6, 7, 9, 10]!
+            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tahun Kelulusan SMA</label>
-                    <select id="calc-grad" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-telkom-500 text-white font-medium">
-                        <option value="2026">Lulusan Baru (2026)</option>
-                        <option value="2025">Gap Year 1 Tahun (2025)</option>
-                        <option value="2024">Gap Year 2 Tahun (2024)</option>
-                        <option value="2023">Lulusan 2023 atau Lebih Lama</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Rata-Rata Nilai Rapor</label>
-                    <input type="number" id="calc-rapor" placeholder="Contoh: 78" min="0" max="100" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-telkom-500 text-white font-medium">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Punya Sertifikat Juara/Organisasi?</label>
-                    <select id="calc-cert" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-telkom-500 text-white font-medium">
-                        <option value="yes">Ya, Ada (Akademik / Non-Akademik)</option>
-                        <option value="no">Tidak Ada Sertifikat</option>
-                    </select>
-                </div>
-                <div>
-                    <button onclick="calculateEligibility()" class="w-full bg-gradient-to-r from-telkom-600 to-rose-600 hover:from-telkom-700 hover:to-rose-700 text-white font-bold py-3 px-4 rounded-xl transition duration-300 text-sm shadow-md shadow-telkom-900/30 flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <span>Analisis Peluang</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Result Box -->
-            <div id="calc-result" class="hidden mt-8 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 transition-all duration-300">
-                <div class="flex items-start space-x-4">
-                    <div id="calc-icon-box" class="p-3 rounded-xl bg-telkom-950 text-telkom-400">
-                        <i id="calc-icon" class="fa-solid fa-circle-info text-2xl"></i>
-                    </div>
-                    <div class="flex-1 space-y-2">
-                        <h3 id="calc-title" class="font-display font-bold text-lg text-white">Menganalisis data...</h3>
-                        <p id="calc-desc" class="text-xs text-slate-300 leading-relaxed"></p>
-                        <div id="calc-badges" class="flex flex-wrap gap-2 pt-2"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ranking & Interactive Display Section -->
-    <section id="ranking-section" class="max-w-7xl mx-auto px-4 py-12 scroll-mt-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-                <h2 class="font-display text-3xl font-black text-white">
-                    🏆 Peta Rangking Beasiswa Telkom University 2026
-                </h2>
-                <p class="text-slate-400 text-sm mt-1">
-                    Urutkan beasiswa secara cerdas berdasarkan preferensimu untuk memulai langkah pendaftaran yang taktis.
-                </p>
-            </div>
-            <!-- Sorting Toggles -->
-            <div class="flex items-center bg-slate-900 p-1.5 rounded-2xl border border-slate-800 self-start md:self-auto">
-                <button id="btn-sort-benefit" onclick="sortScholarships('benefit')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 bg-telkom-600 text-white shadow-md shadow-telkom-950">
-                    <i class="fa-solid fa-gift"></i>
-                    <span>Paling Bagus (Benefit)</span>
-                </button>
-                <button id="btn-sort-ease" onclick="sortScholarships('ease')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 text-slate-400 hover:text-slate-200">
-                    <i class="fa-solid fa-door-open"></i>
-                    <span>Paling Mudah Masuk</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Warning Alert for Gap Year S1 seekers -->
-        <div class="bg-amber-950/40 border border-amber-900/60 rounded-2xl p-4 flex items-start space-x-3 mb-8">
-            <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg mt-0.5"></i>
-            <div>
-                <h4 class="font-bold text-sm text-amber-200">🛡️ Filter Anti-D3 Diaktifkan (S1/D4 Fokus)</h4>
-                <p class="text-xs text-amber-300/90 mt-0.5">
-                    Semua beasiswa di bawah ini menawarkan program **S1** atau **D4** (S1 Terapan)[cite: 2, 6]. Jika kamu mendaftar di Fakultas Ilmu Terapan Kampus Utama, pastikan memilih program studi **S1 Terapan Digital Creative Multimedia** atau **S1 Terapan Sistem Informasi Kota Cerdas** agar terhindar dari jenjang D3[cite: 6].
-                </p>
-            </div>
-        </div>
-
-        <!-- Dynamic Scholarship Cards Grid -->
-        <div id="scholarship-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-500">
-            <!-- Cards will be dynamically rendered and re-ordered here -->
-        </div>
-    </section>
-
-
-    <!-- Scholarship Detail Modal -->
-    <div id="detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden transition-all duration-300">
-        <div class="bg-darkspace-800 border border-slate-700 max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl transform scale-95 transition-all duration-300">
-            <!-- Modal Header -->
-            <div id="modal-header-bg" class="p-6 text-white relative">
-                <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white transition duration-200">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div class="flex items-center space-x-3 mb-2">
-                    <span id="modal-badge" class="bg-white/20 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">Beasiswa 100%</span>
-                </div>
-                <h3 id="modal-title" class="font-display text-2xl font-black">Detail Beasiswa</h3>
-                <p id="modal-subtitle" class="text-xs text-white/80 mt-1">Telkom University Admission 2026</p>
-            </div>
-
-            <!-- Modal Content -->
-            <div class="p-6 space-y-6 max-h-[400px] overflow-y-auto">
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
-                        <span class="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Tahun Kelulusan</span>
-                        <strong id="modal-years" class="text-xs text-slate-200">2024, 2025, 2026</strong>
-                    </div>
-                    <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
-                        <span class="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Biaya Pendaftaran</span>
-                        <strong id="modal-fee" class="text-xs text-slate-200">Gratis (Free)</strong>
-                    </div>
-                </div>
-
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <!-- Pilihan Jurusan SMA -->
                 <div class="space-y-2">
-                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider">📋 Syarat Utama Pendaftaran:</h4>
-                    <ul id="modal-requirements" class="space-y-2 text-xs text-slate-300 list-disc list-inside">
-                        <!-- Dynamic list -->
+                    <label class="block text-xs font-bold text-slate-300 text-left uppercase tracking-wider">🎒 Kamu Lulusan Rumpun Apa?</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="setSchoolType('ips')" id="btn-school-ips" class="py-3 px-4 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200">
+                            Anak IPS / Sosial / SMK Bisnis
+                        </button>
+                        <button onclick="setSchoolType('ipa')" id="btn-school-ipa" class="py-3 px-4 rounded-xl font-bold text-xs border-2 bg-slate-800 border-slate-700 text-slate-400 hover:text-white transition duration-200">
+                            Anak IPA / Eksak / SMK Teknik
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pilihan Tahun Lulus -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-slate-300 text-left uppercase tracking-wider">📅 Tahun Berapa Kamu Lulus Sekolah?</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setGradYear('2026')" id="btn-grad-2026" class="py-3 px-2 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200">
+                            2026 (Baru)
+                        </button>
+                        <button onclick="setGradYear('2025')" id="btn-grad-2025" class="py-3 px-2 rounded-xl font-bold text-xs border-2 bg-slate-800 border-slate-700 text-slate-400 hover:text-white transition duration-200">
+                            2025 (Gap 1 Th)
+                        </button>
+                        <button onclick="setGradYear('2024')" id="btn-grad-2024" class="py-3 px-2 rounded-xl font-bold text-xs border-2 bg-slate-800 border-slate-700 text-slate-400 hover:text-white transition duration-200">
+                            2024 (Gap 2 Th)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex flex-wrap justify-center gap-3 text-xs">
+                <span class="bg-slate-950 px-3 py-1.5 rounded-lg text-slate-400 font-medium">
+                    Status Aktif: <strong id="status-label" class="text-telkom-400">Anak IPS (Lulusan 2026)</strong>
+                </span>
+                <span class="bg-emerald-950 text-emerald-400 px-3 py-1.5 rounded-lg font-bold border border-emerald-500/20">
+                    🛡️ Filter S1 & D4 Aktif (Bebas Jeratan D3)
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Urutan Beasiswa -->
+    <main class="max-w-5xl mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+            <div>
+                <h2 class="font-display text-2xl font-black text-white">
+                    🏆 Peringkat Jalur Beasiswa Telkom University 2026
+                </h2>
+                <p class="text-slate-400 text-xs mt-1">
+                    Pilih urutan beasiswa di bawah untuk melihat mana yang terbaik menurut keuntungan atau kemudahan daftarnya[cite: 2, 3, 7, 8, 9, 10].
+                </p>
+            </div>
+            
+            <!-- Switcher Ranking -->
+            <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 self-start md:self-auto shrink-0">
+                <button id="sort-benefit" onclick="changeSort('benefit')" class="px-3 py-2 rounded-lg text-xs font-bold transition duration-200 bg-telkom-600 text-white">
+                    ⭐ Paling Mewah (Keuntungan)
+                </button>
+                <button id="sort-ease" onclick="changeSort('ease')" class="px-3 py-2 rounded-lg text-xs font-bold transition duration-200 text-slate-400 hover:text-slate-200">
+                    🟢 Paling Gampang Lolos (Mudah)
+                </button>
+            </div>
+        </div>
+
+        <!-- Wadah Kartu Beasiswa Dinamis -->
+        <div id="scholarships-grid" class="space-y-6">
+            <!-- Kartu beasiswa akan muncul otomatis di sini lewat JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal Detail Persyaratan Lengkap -->
+    <div id="detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden transition-all duration-300">
+        <div class="bg-darkspace-800 border-2 border-slate-700 max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-all duration-300">
+            <!-- Header Modal -->
+            <div id="modal-header" class="p-5 text-white relative bg-gradient-to-r from-telkom-700 to-rose-600">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/35 hover:bg-black/60 p-1.5 rounded-full text-white transition duration-150">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+                <span id="modal-badge" class="bg-white/20 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Beasiswa</span>
+                <h3 id="modal-title" class="font-display text-xl font-bold mt-1">Detail Beasiswa</h3>
+            </div>
+
+            <!-- Isi Modal -->
+            <div class="p-5 space-y-4 max-h-[350px] overflow-y-auto text-xs text-slate-300">
+                <div>
+                    <h4 class="font-bold text-slate-100 uppercase text-[10px] tracking-wider mb-1">📅 Sisa Waktu & Deadline:</h4>
+                    <p id="modal-deadline" class="text-slate-300 font-mono"></p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-100 uppercase text-[10px] tracking-wider mb-1">📋 Persyaratan Sangat Mudah:</h4>
+                    <ul id="modal-rules" class="list-disc list-inside space-y-1.5 text-slate-400">
+                        <!-- Diisi otomatis -->
                     </ul>
                 </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider">📅 Agenda Timeline Penting (2026):</h4>
-                    <div id="modal-timeline" class="space-y-3">
-                        <!-- Dynamic timeline steps -->
+                <div>
+                    <h4 class="font-bold text-slate-100 uppercase text-[10px] tracking-wider mb-1">📅 Jadwal Penting Seleksi:</h4>
+                    <div id="modal-timeline" class="space-y-2 pt-1">
+                        <!-- Diisi otomatis -->
                     </div>
                 </div>
             </div>
 
-            <!-- Modal Footer -->
-            <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between">
-                <span class="text-[11px] text-slate-500">Sumber: Brosur Resmi Telkom University</span>
-                <a id="modal-apply-btn" href="https://smb.telkomuniversity.ac.id" target="_blank" class="bg-telkom-600 hover:bg-telkom-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition duration-300 flex items-center space-x-1">
-                    <span>Daftar Sekarang</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+            <!-- Footer Modal -->
+            <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
+                <span id="modal-pdf-ref" class="text-[10px] text-slate-500 font-mono"></span>
+                <a href="https://smb.telkomuniversity.ac.id" target="_blank" class="bg-telkom-600 hover:bg-telkom-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition duration-200">
+                    Daftar Sekarang <i class="fa-solid fa-up-right-from-square text-[9px] ml-1"></i>
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-darkspace-950 border-t border-slate-900 py-12 px-4 mt-20 text-center text-slate-500 text-xs">
-        <div class="max-w-7xl mx-auto space-y-4">
-            <div class="flex justify-center space-x-6 text-slate-400 text-base mb-2">
-                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="hover:text-telkom-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+    <footer class="bg-darkspace-950 border-t border-slate-900 py-12 px-4 text-center text-slate-500 text-xs mt-16">
+        <div class="max-w-2xl mx-auto space-y-4">
+            <div class="flex justify-center space-x-4 text-slate-400 text-sm">
+                <a href="https://wa.me/6281122339123" target="_blank" class="hover:text-telkom-500 transition"><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Admisi</a>
             </div>
-            <p>Direkomendasikan secara khusus untuk Calon Mahasiswa Gap Year S1 / D4 angkatan 2026.</p>
-            <p class="text-slate-600">Disclaimer: Aplikasi ini menggunakan data dari dokumen brosur Universitas Telkom 2026. Jadwal serta ketentuan beasiswa dapat berubah sewaktu-waktu sesuai kebijakan panitia SMB Telkom.</p>
-            <p class="text-slate-600 font-medium">© 2026 Tel-U ScholarPath Portal. Created with ❤️ for future leaders.</p>
+            <p>Direkomendasikan khusus untuk Calon Mahasiswa Gap Year yang ingin mendaftar program S1 & D4 saja[cite: 2, 3, 6, 7, 9, 10].</p>
+            <p class="text-slate-600">Disclaimer: Menggunakan data asli bersumber dari dokumen resmi Universitas Telkom 2026. Jadwal & aturan beasiswa dapat berubah sewaktu-waktu sesuai ketentuan panitia pusat SMB.</p>
+            <p class="text-slate-600 font-medium">© 2026 Tel-U ScholarPath Portal.</p>
         </div>
     </footer>
 
-    <!-- JavaScript Section -->
+    <!-- JavaScript Logika Portal -->
     <script>
-        // Data Beasiswa dari Brosur-Brosur 2026
-        const scholarships = [
+        // Saring Data Sekolah & Kelulusan Aktif
+        let userSchoolType = 'ips'; // Default: IPS
+        let userGradYear = '2026'; // Default: Lulusan baru
+        let currentSortType = 'benefit'; // Default: Urut Benefit
+
+        // Database Master Beasiswa dari Brosur Resmi 2026
+        const scholarshipsDatabase = [
             {
                 id: 'endowment',
-                title: 'Tel-U Endowment Fund Scholarship',
-                badge: 'Full 100% Bebas Biaya',
-                badgeColor: 'bg-emerald-950 text-emerald-400 border border-emerald-500/30',
-                targetYears: 'Lulusan 2024, 2025, 2026 (Gap Year Terbuka)',
-                pembelianPIN: 'Gratis (Free Pendaftaran)',
-                closeDate: '2026-06-10T23:59:59+07:00', // Sesuai brosur: 10 Juni 2026
+                title: 'Beasiswa Uang Abadi (Tel-U Endowment Fund)',
                 benefitRank: 1,
                 easeRank: 3,
-                iconClass: 'fa-solid fa-hand-holding-dollar',
-                colorClasses: 'from-emerald-500 to-teal-600',
-                requirements: [
-                    'Siswa SMA/SMK/MA/Sederajat lulusan tahun 2024, 2025, atau 2026[cite: 3].',
-                    'Nilai rapor semester 1 sampai 5 minimal rata-rata 70[cite: 3].',
-                    'Wajib melampirkan Dokumen Penghasilan Orang Tua (slip gaji/surat keterangan penghasilan)[cite: 3].',
-                    'Mengikuti akun Instagram @endowmentfund_telkomuniv dan mengunggah buktinya[cite: 3].',
-                    'Sertifikat prestasi akademik/non-akademik bersifat opsional (tidak wajib)[cite: 3].'
+                badge: '🏆 Gratis 100% + Asrama Gratis',
+                badgeColor: 'bg-emerald-950 text-emerald-400 border border-emerald-500/20',
+                cost: 'GRATIS total biaya pendaftaran (pembelian PIN gratis)[cite: 3]!',
+                pdfName: 'Brosur_EndowmentFund.pdf',
+                closeDate: '2026-06-10T23:59:59+07:00', // Sesuai brosur: 10 Juni 2026
+                simpleSummary: 'Jalur termewah! Kuliah gratis sampai kamu lulus sarjana, dapet kamar asrama gratis di Bandung, dan biaya daftar pun gratis tanpa perlu bayar sepeser pun[cite: 3].',
+                rules: [
+                    'Lulusan tahun 2024, 2025, atau 2026 (Aman buat gap year)[cite: 3]!',
+                    'Rata-rata nilai rapor semester 1 sampai 5 minimal 70[cite: 3].',
+                    'Wajib upload slip gaji orang tua atau surat keterangan pendapatan ortu[cite: 3].',
+                    'Wajib follow akun Instagram @endowmentfund_telkomuniv[cite: 3].',
+                    'Sertifikat lomba/organisasi itu opsional (boleh dikosongkan)[cite: 3].'
                 ],
                 timeline: [
-                    { date: '4 Mei - 10 Juni 2026', desc: 'Pendaftaran online di website SMB Tel-U[cite: 3]' },
-                    { date: '17 Juni 2026', desc: 'Pengumuman Kelulusan Seleksi Berkas Administrasi[cite: 3]' },
-                    { date: '20 Juni 2026', desc: 'Ujian Tes Online Skolastik (Berbasis Komputer)[cite: 3]' },
-                    { date: '24 - 26 Juni 2026', desc: 'Sesi Wawancara Online bagi yang lolos tes tulis[cite: 3]' },
-                    { date: '30 Juni 2026', desc: 'Pengumuman Kelulusan Akhir Beasiswa 100%[cite: 3]' }
-                ]
+                    { date: '4 Mei - 10 Juni 2026', action: 'Buka website pendaftaran & upload berkas rapor[cite: 3]' },
+                    { date: '17 Juni 2026', action: 'Pengumuman lolos berkas administrasi[cite: 3]' },
+                    { date: '20 Juni 2026', action: 'Tes online logika (lewat laptop/PC dari rumah)[cite: 3]' },
+                    { date: '24 - 26 Juni 2026', action: 'Wawancara santai online dengan panitia beasiswa[cite: 3]' },
+                    { date: '30 Juni 2026', action: 'Pengumuman resmi kelulusan beasiswa penuh 100%[cite: 3]' }
+                ],
+                // Daftar Jurusan S1 yang dibuka
+                majors: {
+                    ipa: [
+                        'S1 Informatika (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Rekayasa Perangkat Lunak (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Data Sains (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknologi Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya',
+                        'S1 Teknik Telekomunikasi (S.T) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Teknik Elektro (S.T) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknik Komputer (S.T) - Kampus Bandung / Surabaya',
+                        'S1 Desain Komunikasi Visual (DKV) - Kampus Bandung / Jakarta / Purwokerto',
+                        'S1 Manajemen Bisnis (MBTI) - Kampus Bandung',
+                        'S1 Digital Business (S.Bns) - Kampus Bandung / Surabaya / Purwokerto'
+                    ],
+                    ips: [
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Desain Komunikasi Visual (DKV) - Kampus Bandung / Jakarta / Purwokerto',
+                        'S1 Manajemen Bisnis (MBTI) - Kampus Bandung',
+                        'S1 Digital Business (S.Bns) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Akuntansi - Kampus Bandung',
+                        'S1 Ilmu Komunikasi - Kampus Bandung',
+                        'S1 Digital Public Relations - Kampus Bandung'
+                    ]
+                }
             },
             {
                 id: 'prestasi',
-                title: 'Beasiswa Jalur Prestasi Akademik / Non-Akademik',
-                badge: 'Full 100% & Fast Track',
-                badgeColor: 'bg-indigo-950 text-indigo-400 border border-indigo-500/30',
-                targetYears: 'Siswa SMA/SMK/MA lulusan 3 tahun terakhir (2024-2026)',
-                pembelianPIN: 'Rp 200.000 (Maksimal pilih 5 program studi)',
-                closeDate: '2026-06-12T23:59:59+07:00', // Sesuai brosur: 12 Juni 2026
+                title: 'Beasiswa Jalur Prestasi Akademik / Organisasi (JPA)',
                 benefitRank: 2,
                 easeRank: 4,
-                iconClass: 'fa-solid fa-medal',
-                colorClasses: 'from-indigo-500 to-purple-600',
-                requirements: [
-                    'Siswa lulusan SMA/SMK/MA 3 tahun terakhir (2024, 2025, 2026)[cite: 7].',
-                    'Nilai Rapor semester 1 s/d 5 minimal rata-rata 75[cite: 7].',
-                    'Wajib melampirkan minimal satu sertifikat bukti juara/prestasi kompetisi (seperti OSN, LKS, FLS2N, atau lomba internasional)[cite: 7], ATAU surat keterangan kepengurusan organisasi siswa (OSIS/Pramuka/PMR/Paskibra/Kerohanian)[cite: 7].',
-                    'Bisa mendaftar ke Program Fast Track (Lulus S1+S2 hanya dalam waktu 5 tahun)[cite: 7].'
+                badge: '🥈 Beasiswa 100% & Kuliah Cepat (Fast Track)',
+                badgeColor: 'bg-indigo-950 text-indigo-400 border border-indigo-500/20',
+                cost: 'Bayar PIN pendaftaran seharga Rp200.000[cite: 7].',
+                pdfName: 'brosur-jalur-seleksi-beasiswa-prestasi-telkom-university-2026_compressed.pdf',
+                closeDate: '2026-06-12T23:59:59+07:00', // Sesuai brosur: 12 Juni 2026
+                simpleSummary: 'Khusus kamu yang pernah ikut organisasi (OSIS, PMR, Pramuka, Paskibra)[cite: 7] ATAU pernah juara lomba. Kamu bisa langsung dapet beasiswa 100% & lanjut S2 gratis (lulus S1+S2 dalam 5 tahun)[cite: 7]!',
+                rules: [
+                    'Lulusan tahun 2024, 2025, atau 2026 (Aman buat gap year)[cite: 7].',
+                    'Rata-rata nilai rapor semester 1 sampai 5 minimal 75[cite: 7].',
+                    'Wajib upload minimal 1 sertifikat (Bisa sertifikat juara lomba ATAU surat bukti jadi anggota OSIS / Pramuka / Ekskul / Kerohanian)[cite: 7].'
                 ],
                 timeline: [
-                    { date: '11 Mei - 12 Juni 2026', desc: 'Periode pendaftaran & unggah berkas prestasi[cite: 7]' },
-                    { date: 'Segera', desc: 'Uji Pemetaan Pengembangan Diri Online (Jadwal menyusul)[cite: 2]' },
-                    { date: 'Juni/Juli 2026', desc: 'Pengumuman kelulusan hasil review portofolio prestasi' }
-                ]
+                    { date: '11 Mei - 12 Juni 2026', action: 'Unggah rapor dan sertifikat organisasi/juara di web[cite: 7]' },
+                    { date: 'Juni/Juli 2026', action: 'Uji psikotes pengembangan diri (opsional)[cite: 2]' },
+                    { date: 'Akhir Juni 2026', action: 'Pengumuman penerima beasiswa penuh 100%[cite: 7]' }
+                ],
+                majors: {
+                    ipa: [
+                        'S1 Informatika (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Rekayasa Perangkat Lunak (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Data Sains (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknologi Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya',
+                        'S1 Teknik Telekomunikasi (S.T) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Teknik Elektro (S.T) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknik Industri - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Digital Supply Chain (Teknik Logistik) - Kampus Bandung / Surabaya / Purwokerto'
+                    ],
+                    ips: [
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Teknik Industri - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Digital Supply Chain (Teknik Logistik) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Desain Komunikasi Visual (DKV) - Kampus Bandung / Jakarta / Purwokerto',
+                        'S1 Digital Business (S.Bns) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Manajemen Bisnis (MBTI) - Kampus Bandung',
+                        'S1 Ilmu Komunikasi - Kampus Bandung',
+                        'S1 Administrasi Bisnis - Kampus Bandung'
+                    ]
+                }
             },
             {
-                id: 'rapor_regional',
-                title: 'Jalur Rapor Tel-U Surabaya & Jakarta',
-                badge: 'Paling Mudah - Tanpa Tes',
-                badgeColor: 'bg-amber-950 text-amber-400 border border-amber-500/30',
-                targetYears: 'Siswa SMA/SMK/MA sederajat lulusan 2024, 2025, 2026',
-                pembelianPIN: 'Rp 300.000 (Maksimal pilih 5 program studi)',
-                closeDate: '2026-06-09T23:59:59+07:00', // Sesuai brosur TUS: 9 Juni 2026
+                id: 'surabaya',
+                title: 'Jalur Rapor Tel-U Surabaya (TUS)',
                 benefitRank: 3,
                 easeRank: 1,
-                iconClass: 'fa-solid fa-file-invoice',
-                colorClasses: 'from-amber-500 to-orange-600',
-                requirements: [
-                    'Siswa SMA/SMK/MA sederajat lulusan tahun 2024, 2025, atau 2026[cite: 2, 9].',
-                    'Nilai rapor semester 1-5 minimal rata-rata 70 (Tanpa batasan jurusan sekolah)[cite: 2, 9].',
-                    'Tanpa tes tertulis atau ujian masuk online lainnya[cite: 2, 9].',
-                    'Tersedia Beasiswa Pintar dengan potongan biaya kuliah berkisar hingga 100%[cite: 2, 9].',
-                    'Sertifikat prestasi tambahan bersifat opsional (tidak wajib)[cite: 2, 9].'
+                badge: '🟢 Paling Gampang - Tanpa Tes Sama Sekali',
+                badgeColor: 'bg-amber-950 text-amber-400 border border-amber-500/20',
+                cost: 'Bayar PIN pendaftaran Rp300.000 (Diskon 50% selama promo)[cite: 9]!',
+                pdfName: 'Brosur-Jalur-TUS-Juni-tahap-1_compressed.pdf',
+                closeDate: '2026-06-09T23:59:59+07:00', // Sesuai brosur TUS: 9 Juni 2026
+                simpleSummary: 'Jalur termudah untuk langsung dapat tempat kuliah S1! Cukup masukkan nilai rapor, tanpa perlu ujian pusing-pusing. Ada potongan biaya kuliah Beasiswa Pintar hingga 100%[cite: 9]!',
+                rules: [
+                    'Lulusan tahun 2024, 2025, atau 2026[cite: 9].',
+                    'Nilai rata-rata rapor semester 1-5 minimal 70[cite: 9].',
+                    'Sertifikat prestasi tambahan bersifat opsional (tidak wajib)[cite: 9].',
+                    'Murni dinilai dari berkas rapor sekolah, tanpa tes online[cite: 9]!'
                 ],
                 timeline: [
-                    { date: '26 Mei - 9 Juni 2026', desc: 'Pendaftaran Jalur Rapor Tel-U Surabaya (TUS)[cite: 9]' },
-                    { date: '27 Mei - 3 Juni 2026', desc: 'Diskon 50% PIN pendaftaran selama periode tertentu[cite: 9]' },
-                    { date: '11 Juni 2026', desc: 'Pengumuman Kelulusan Jalur Rapor Regional Surabaya[cite: 9]' }
-                ]
+                    { date: '26 Mei - 9 Juni 2026', action: 'Periode pengisian berkas nilai rapor & upload[cite: 9]' },
+                    { date: '27 Mei - 3 Juni 2026', action: 'Promo potongan harga PIN pendaftaran diskon 50%[cite: 9]' },
+                    { date: '11 Juni 2026', action: 'Pengumuman kelulusan kuliah & info Beasiswa Pintar[cite: 9]' }
+                ],
+                majors: {
+                    ipa: [
+                        'S1 Informatika (S.Kom)',
+                        'S1 Sistem Informasi (S.Kom)',
+                        'S1 Rekayasa Perangkat Lunak (S.Kom)',
+                        'S1 Data Sains (S.Kom)',
+                        'S1 Teknologi Informasi (S.Kom)',
+                        'S1 Teknik Elektro (S.T)',
+                        'S1 Teknik Telekomunikasi (S.T)',
+                        'S1 Teknik Komputer (S.T)',
+                        'S1 Teknik Industri',
+                        'S1 Digital Supply Chain (Teknik Logistik)',
+                        'S1 Digital Business'
+                    ],
+                    ips: [
+                        'S1 Sistem Informasi (S.Kom)',
+                        'S1 Teknik Industri',
+                        'S1 Digital Supply Chain (Teknik Logistik)',
+                        'S1 Digital Business'
+                    ]
+                }
+            },
+            {
+                id: 'jakarta',
+                title: 'Jalur Rapor Tel-U Jakarta (TUJ)',
+                benefitRank: 3,
+                easeRank: 1,
+                badge: '🟢 Tanpa Tes - Khusus Kampus Jakarta',
+                badgeColor: 'bg-amber-950 text-amber-400 border border-amber-500/20',
+                cost: 'PIN pendaftaran seharga Rp300.000[cite: 2].',
+                pdfName: 'Brosur-Jalur-Telkom-University-Jakarta-2026.pdf',
+                closeDate: '2026-06-25T23:59:59+07:00', // Estimasi gelombang lanjutan di bulan Juni
+                simpleSummary: 'Ingin kuliah di Jakarta? Cukup pakai nilai rapor sekolah semester 1 sampai 5 tanpa perlu mengikuti tes masuk tertulis. Tersedia kuota Beasiswa Pintar hingga potongan 100%[cite: 2]!',
+                rules: [
+                    'Lulusan SMA/SMK/MA sederajat tahun 2024, 2025, atau 2026[cite: 2].',
+                    'Nilai rata-rata rapor semester 1-5 minimal 70[cite: 2].',
+                    'Menyelesaikan kuesioner pemetaan pengembangan diri online[cite: 2].'
+                ],
+                timeline: [
+                    { date: 'Mei - Juni 2026', action: 'Daftar online & input nilai pelajaran sekolah[cite: 2]' },
+                    { date: 'Segera', action: 'Isi kuesioner pengembangan diri dari rumah[cite: 2]' },
+                    { date: 'Juni 2026', action: 'Pengumuman hasil kelayakan penempatan beasiswa[cite: 2]' }
+                ],
+                majors: {
+                    ipa: [
+                        'S1 Sistem Informasi (S.Kom)',
+                        'S1 Teknologi Informasi (S.Kom)',
+                        'S1 Teknik Telekomunikasi (S.T)',
+                        'S1 Desain Komunikasi Visual (DKV)'
+                    ],
+                    ips: [
+                        'S1 Sistem Informasi (S.Kom)',
+                        'S1 Desain Komunikasi Visual (DKV)'
+                    ]
+                }
+            },
+            {
+                id: 'vokasi',
+                title: 'Beasiswa Pintar Jalur Vokasi S1 Terapan (D4)',
+                benefitRank: 4,
+                easeRank: 2,
+                badge: '🎓 Jaminan Sarjana Terapan (D4)',
+                badgeColor: 'bg-blue-950 text-blue-400 border border-blue-500/20',
+                cost: 'Bayar PIN pendaftaran Rp200.000[cite: 6].',
+                pdfName: 'Brosur-Jalur-Seleksi-Vokasi-Telkom-University-2026.pdf',
+                closeDate: '2026-06-25T23:59:59+07:00', // Dibuka berkala setiap bulan, tutup tanggal 25
+                simpleSummary: 'Jalur sarjana terapan (praktek 70%, teori 30%) yang sangat gampang diserap industri kerja. S1 Terapan (D4) memiliki status gelar sarjana yang sama tingginya dengan S1 biasa[cite: 2, 6]!',
+                rules: [
+                    'Lulusan tahun 2024, 2025, atau 2026[cite: 6].',
+                    'Nilai rata-rata rapor semester 1-5 minimal 70[cite: 6].',
+                    'Sertifikat prestasi pendukung bersifat opsional[cite: 6].',
+                    'PENTING: Jangan pilih program studi D3! Pilih program berlabel S1 Terapan di FIT agar lulus dengan ijazah sarjana[cite: 6].'
+                ],
+                timeline: [
+                    { date: 'Setiap tanggal 26', action: 'Pendaftaran gelombang bulanan resmi dibuka[cite: 6]' },
+                    { date: 'Setiap tanggal 25', action: 'Batas akhir pengumpulan berkas seleksi ditutup[cite: 6]' },
+                    { date: 'Setiap tanggal 28', action: 'Pengumuman kelulusan penempatan program beasiswa vokasi[cite: 6]' }
+                ],
+                majors: {
+                    ipa: [
+                        'S1 Terapan (D4) Smart City Information System - Kampus Bandung[cite: 6]',
+                        'S1 Terapan (D4) Digital Creative Multimedia (DCM)* - Kampus Bandung[cite: 6]'
+                    ],
+                    ips: [
+                        'S1 Terapan (D4) Smart City Information System - Kampus Bandung[cite: 6]'
+                    ]
+                }
             },
             {
                 id: 'utbk',
-                title: 'Jalur Seleksi Skor Nilai UTBK',
-                badge: 'Tanpa Tes - Pakai Hasil SNBT',
-                badgeColor: 'bg-sky-950 text-sky-400 border border-sky-500/30',
-                targetYears: 'Lulusan SMA/SMK/MA 3 tahun terakhir (2024, 2025, 2026)',
-                pembelianPIN: 'Rp 400.000',
-                closeDate: '2026-06-19T23:59:59+07:00', // Sesuai brosur: 19 Juni 2026
+                title: 'Beasiswa Pintar Jalur Skor Nilai UTBK',
                 benefitRank: 4,
                 easeRank: 2,
-                iconClass: 'fa-solid fa-square-poll-vertical',
-                colorClasses: 'from-sky-500 to-blue-600',
-                requirements: [
-                    'Siswa lulusan SMA/SMK/MA 3 tahun terakhir (2024, 2025, 2026)[cite: 8].',
-                    'Wajib mengunggah sertifikat lembar nilai asli hasil ujian UTBK-SNBT yang diperoleh dari panitia pusat[cite: 8].',
-                    'Tanpa memerlukan ujian tulis tambahan atau tes online dari kampus[cite: 8].',
-                    'Tersedia bantuan Beasiswa Pintar (potongan biaya operasional kuliah) sesuai kuota[cite: 8].'
+                badge: '📊 Pakai Nilai Sertifikat UTBK',
+                badgeColor: 'bg-sky-950 text-sky-400 border border-sky-500/20',
+                cost: 'Bayar PIN pendaftaran Rp400.000[cite: 8].',
+                pdfName: 'brosur-jalur-seleksi-utbk-telkom-university-2026.pdf',
+                closeDate: '2026-06-19T23:59:59+07:00', // Sesuai brosur UTBK: 19 Juni 2026
+                simpleSummary: 'Skor nilai UTBK-SNBT kamu tidak terpakai atau gagal masuk PTN? Jangan dibuang! Upload sertifikat nilainya di jalur ini untuk dikonversi menjadi beasiswa beasiswa potongan biaya[cite: 8].',
+                rules: [
+                    'Lulusan tahun 2024, 2025, atau 2026[cite: 8].',
+                    'Wajib memiliki dan mengunggah lembar nilai resmi UTBK-SNBT[cite: 8].',
+                    'Tanpa ada tes ujian tertulis tambahan, murni dari hasil verifikasi nilai UTBK[cite: 8].'
                 ],
                 timeline: [
-                    { date: '20 Mei - 19 Juni 2026', desc: 'Periode unggah sertifikat UTBK secara mandiri[cite: 8]' },
-                    { date: 'Juni 2026', desc: 'Verifikasi berkas & nilai skor UTBK oleh tim admisi' },
-                    { date: 'Akhir Juni 2026', desc: 'Pengumuman kelulusan penempatan jurusan berdasarkan skor UTBK' }
-                ]
+                    { date: '20 Mei - 19 Juni 2026', action: 'Periode pendaftaran & pengisian nilai skor UTBK[cite: 8]' },
+                    { date: 'Juni 2026', action: 'Pemeriksaan berkas & penyaringan kelulusan admisi' },
+                    { date: 'Akhir Juni 2026', action: 'Pengumuman resmi program beasiswa potongan biaya kuliah[cite: 8]' }
+                ],
+                majors: {
+                    ipa: [
+                        'S1 Informatika (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Rekayasa Perangkat Lunak (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Data Sains (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknologi Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya',
+                        'S1 Teknik Telekomunikasi (S.T) - Kampus Bandung / Jakarta / Surabaya / Purwokerto'
+                    ],
+                    ips: [
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Desain Komunikasi Visual (DKV) - Kampus Bandung / Jakarta / Purwokerto',
+                        'S1 Manajemen Bisnis (MBTI) - Kampus Bandung',
+                        'S1 Digital Business (S.Bns) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Akuntansi - Kampus Bandung',
+                        'S1 Ilmu Komunikasi - Kampus Bandung'
+                    ]
+                }
+            },
+            {
+                id: 'aperti',
+                title: 'Beasiswa Aliansi BUMN (APERTI BUMN)',
+                benefitRank: 2,
+                easeRank: 4,
+                badge: '🏢 Full Beasiswa 100% Kerja BUMN',
+                badgeColor: 'bg-indigo-950 text-indigo-400 border border-indigo-500/20',
+                cost: 'Bayar PIN pendaftaran Rp100.000 (Sangat terjangkau)[cite: 10]!',
+                pdfName: 'brosur-jalur-seleksi-beasiswa-aperti-bumn-telkom-university-2026.pdf',
+                closeDate: '2026-06-07T23:59:59+07:00', // Sesuai brosur APERTI: 7 Juni 2026
+                simpleSummary: 'Jalur bergengsi dari kementerian BUMN. Kamu bisa kuliah gratis total sampai lulus dan berkesempatan langsung direkrut berkarir di anak perusahaan BUMN[cite: 10]!',
+                rules: [
+                    'PENTING: Hanya untuk lulusan tahun 2025 dan 2026 (Lulusan 2024 tidak bisa daftar)[cite: 10]!',
+                    'Nilai rapor semester 1 sampai 5 (Tanpa minimal batas nilai, tapi harus tinggi agar lolos)[cite: 10].',
+                    'Sertifikat keaktifan organisasi atau juara lomba wajib/opsional sangat disarankan[cite: 10].'
+                ],
+                timeline: [
+                    { date: '25 Mei - 7 Juni 2026', action: 'Pembukaan pendaftaran online & submit berkas[cite: 10]' },
+                    { date: '12 Juni 2026', action: 'Pengumuman seleksi berkas administrasi awal[cite: 10]' },
+                    { date: '18 Juni 2026', action: 'Ujian tes online logika dari rumah[cite: 10]' },
+                    { date: '25 - 26 Juni 2026', action: 'Wawancara seleksi akhir dengan penguji industri BUMN[cite: 10]' },
+                    { date: '2 Juli 2026', action: 'Pengumuman akhir peraih beasiswa penuh 100% APERTI BUMN[cite: 10]' }
+                ],
+                majors: {
+                    ipa: [
+                        'S1 Informatika (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Rekayasa Perangkat Lunak (S.Kom) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknik Telekomunikasi (S.T) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Teknik Elektro (S.T) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Teknik Industri - Kampus Bandung / Surabaya / Purwokerto'
+                    ],
+                    ips: [
+                        'S1 Sistem Informasi (S.Kom) - Kampus Bandung / Jakarta / Surabaya / Purwokerto',
+                        'S1 Teknik Industri - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Digital Business (S.Bns) - Kampus Bandung / Surabaya / Purwokerto',
+                        'S1 Manajemen Bisnis (MBTI) - Kampus Bandung',
+                        'S1 Akuntansi - Kampus Bandung'
+                    ]
+                }
             }
         ];
 
-        let currentSort = 'benefit';
-
+        // Mulai render halaman saat aplikasi dibuka
         window.onload = function() {
             renderScholarships();
-            setInterval(updateAllTimers, 1000);
-            updateAllTimers();
+            setInterval(updateCountdownTimers, 1000);
+            updateCountdownTimers();
         };
 
-        // Render Scholarship Cards
-        function renderScholarships() {
-            const container = document.getElementById('scholarship-container');
-            container.innerHTML = '';
-
-            // Sort data
-            let sortedData = [...scholarships];
-            if (currentSort === 'benefit') {
-                sortedData.sort((a, b) => a.benefitRank - b.benefitRank);
+        // Ganti Tipe Sekolah (IPS atau IPA)
+        function setSchoolType(type) {
+            userSchoolType = type;
+            
+            // Ganti warna tombol aktif
+            const btnIps = document.getElementById('btn-school-ips');
+            const btnIpa = document.getElementById('btn-school-ipa');
+            
+            if (type === 'ips') {
+                btnIps.className = "py-3 px-4 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200";
+                btnIpa.className = "py-3 px-4 rounded-xl font-bold text-xs border-2 bg-slate-800 border-slate-700 text-slate-400 hover:text-white transition duration-200";
             } else {
-                sortedData.sort((a, b) => a.easeRank - b.easeRank);
+                btnIpa.className = "py-3 px-4 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200";
+                btnIps.className = "py-3 px-4 rounded-xl font-bold text-xs border-2 bg-slate-800 border-slate-700 text-slate-400 hover:text-white transition duration-200";
             }
 
-            sortedData.forEach((item, index) => {
-                const rankText = currentSort === 'benefit' ? `Benefit Rank #${item.benefitRank}` : `Kemudahan Rank #${item.easeRank}`;
+            updateStatusLabel();
+            renderScholarships();
+        }
+
+        // Ganti Tahun Kelulusan Sekolah
+        function setGradYear(year) {
+            userGradYear = year;
+            
+            // Atur warna tombol aktif
+            const btn2026 = document.getElementById('btn-grad-2026');
+            const btn2025 = document.getElementById('btn-grad-2025');
+            const btn2024 = document.getElementById('btn-grad-2024');
+
+            [btn2026, btn2025, btn2024].forEach(btn => {
+                btn.className = "py-3 px-2 rounded-xl font-bold text-xs border-2 bg-slate-800 border-slate-700 text-slate-400 hover:text-white transition duration-200";
+            });
+
+            if (year === '2026') {
+                btn2026.className = "py-3 px-2 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200";
+            } else if (year === '2025') {
+                btn2025.className = "py-3 px-2 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200";
+            } else if (year === '2024') {
+                btn2024.className = "py-3 px-2 rounded-xl font-bold text-xs border-2 bg-telkom-600 border-telkom-500 text-white transition duration-200";
+            }
+
+            updateStatusLabel();
+            renderScholarships();
+        }
+
+        // Ganti Teks Label Status
+        function updateStatusLabel() {
+            const label = document.getElementById('status-label');
+            const schoolText = userSchoolType === 'ips' ? 'Anak IPS / SMK Bisnis' : 'Anak IPA / SMK Teknik';
+            label.innerText = `${schoolText} (Lulusan ${userGradYear})`;
+        }
+
+        // Ganti Model Pengurutan Peringkat
+        function changeSort(type) {
+            currentSortType = type;
+            const btnBenefit = document.getElementById('sort-benefit');
+            const btnEase = document.getElementById('sort-ease');
+
+            if (type === 'benefit') {
+                btnBenefit.className = "px-3 py-2 rounded-lg text-xs font-bold transition duration-200 bg-telkom-600 text-white";
+                btnEase.className = "px-3 py-2 rounded-lg text-xs font-bold transition duration-200 text-slate-400 hover:text-slate-200";
+            } else {
+                btnEase.className = "px-3 py-2 rounded-lg text-xs font-bold transition duration-200 bg-telkom-600 text-white";
+                btnBenefit.className = "px-3 py-2 rounded-lg text-xs font-bold transition duration-200 text-slate-400 hover:text-slate-200";
+            }
+
+            renderScholarships();
+        }
+
+        // Tampilkan Semua Kartu Beasiswa ke Layar
+        function renderScholarships() {
+            const grid = document.getElementById('scholarships-grid');
+            grid.innerHTML = '';
+
+            // Copy & Urutkan beasiswa
+            let items = [...scholarshipsDatabase];
+            if (currentSortType === 'benefit') {
+                items.sort((a, b) => a.benefitRank - b.benefitRank);
+            } else {
+                items.sort((a, b) => a.easeRank - b.easeRank);
+            }
+
+            items.forEach((item, index) => {
+                // DETEKSI KELAYAKAN KHUSUS (Contoh: APERTI BUMN tidak menerima kelulusan 2024)
+                let isEligible = true;
+                let ineligibleReason = "";
+
+                if (item.id === 'aperti' && userGradYear === '2024') {
+                    isEligible = false;
+                    ineligibleReason = "Maaf! Berdasarkan brosur APERTI BUMN, beasiswa ini hanya menerima lulusan tahun 2025 dan 2026. Lulusan 2024 tidak diperbolehkan mendaftar[cite: 10]!";
+                }
+
+                const rankText = currentSortType === 'benefit' 
+                    ? `Peringkat Keuntungan #${item.benefitRank}` 
+                    : `Peringkat Kemudahan Lolos #${item.easeRank}`;
+
                 const card = document.createElement('div');
-                card.className = `bg-slate-900 border border-slate-800 hover:border-telkom-500/50 rounded-3xl p-6 transition-all duration-300 relative flex flex-col justify-between group overflow-hidden`;
-                card.setAttribute('data-id', item.id);
+                card.className = `p-5 rounded-2xl border-2 transition-all duration-300 relative ${
+                    isEligible 
+                        ? 'bg-slate-900/60 border-slate-800 hover:border-telkom-500/50' 
+                        : 'bg-slate-950/90 border-rose-950 opacity-60'
+                }`;
+
+                // Saring jurusan berdasarkan tipe sekolah anak (IPA / IPS)
+                const allowedMajors = item.majors[userSchoolType] || [];
+
+                let majorsHtml = "";
+                allowedMajors.forEach(m => {
+                    majorsHtml += `
+                        <div class="bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 flex items-center space-x-2 text-[11px] text-slate-300 font-medium">
+                            <span class="h-1.5 w-1.5 rounded-full bg-telkom-500"></span>
+                            <span>${m}</span>
+                        </div>
+                    `;
+                });
 
                 card.innerHTML = `
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-telkom-950/20 to-transparent rounded-full -z-10 group-hover:scale-110 transition duration-300"></div>
-                    <div>
-                        <!-- Badge & Rank -->
-                        <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-                            <span class="text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full ${item.badgeColor}">
-                                ${item.badge}
-                            </span>
-                            <span class="text-xs font-bold text-telkom-500 bg-telkom-950/50 px-2.5 py-1 rounded-lg border border-telkom-900/40">
-                                ${rankText}
-                            </span>
-                        </div>
+                    <!-- Judul & Badge Kategori -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full ${item.badgeColor}">
+                            ${item.badge}
+                        </span>
+                        <span class="text-[10px] font-bold text-amber-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">
+                            ${rankText}
+                        </span>
+                    </div>
 
-                        <!-- Title and Icon -->
-                        <div class="flex items-start space-x-3.5 mb-4">
-                            <div class="bg-gradient-to-tr ${item.colorClasses} text-white p-3.5 rounded-2xl shadow-md shrink-0">
-                                <i class="${item.iconClass} text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-display font-extrabold text-lg text-white group-hover:text-telkom-400 transition leading-snug">${item.title}</h3>
-                                <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-graduation-cap text-telkom-500 mr-1.5"></i>${item.targetYears}</p>
-                            </div>
-                        </div>
+                    <!-- Informasi Beasiswa -->
+                    <div class="space-y-2 mb-4">
+                        <h3 class="font-display font-extrabold text-base text-white flex items-center gap-2">
+                            <i class="fa-solid fa-gift text-telkom-500"></i> ${item.title}
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">${item.simpleSummary}</p>
+                    </div>
 
-                        <!-- Real-time Countdown Timer Frame -->
-                        <div class="bg-slate-950 border border-slate-800/80 rounded-2xl p-4 mb-4 flex items-center justify-between">
-                            <div>
-                                <span class="block text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Tutup Pendaftaran</span>
-                                <span class="text-[11px] font-bold text-slate-300"><i class="fa-regular fa-calendar-days text-telkom-500 mr-1"></i>${formatTimelineDate(item.closeDate)}</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="block text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Sisa Waktu</span>
-                                <span id="timer-${item.id}" class="text-sm font-mono font-bold text-rose-500 animate-pulse">00h 00m 00s</span>
-                            </div>
+                    <!-- Kotak Biaya & Sisa Hari -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800/80 mb-4">
+                        <div class="text-xs">
+                            <span class="text-[9px] text-slate-500 block uppercase font-bold tracking-wider">💰 Berapa Biaya Pendaftarannya?</span>
+                            <span class="text-slate-200 font-bold">${item.cost}</span>
                         </div>
-
-                        <!-- Quick requirements list snippet -->
-                        <div class="space-y-1.5 mb-6 text-xs text-slate-300">
-                            <div class="flex items-start space-x-2">
-                                <span class="text-telkom-500 mt-0.5">•</span>
-                                <span>Rapor min: <strong class="text-white">${item.id === 'prestasi' ? '75' : '70'}</strong>[cite: 3, 7]</span>
-                            </div>
-                            <div class="flex items-start space-x-2">
-                                <span class="text-telkom-500 mt-0.5">•</span>
-                                <span>PIN Daftar: <strong class="text-white">${item.pembelianPIN}</strong>[cite: 2, 3, 7, 8, 9]</span>
-                            </div>
+                        <div class="text-xs sm:text-right">
+                            <span class="text-[9px] text-slate-500 block uppercase font-bold tracking-wider">⏳ Kapan Pendaftaran Ditutup?</span>
+                            <span id="timer-${item.id}" class="text-rose-500 font-mono font-bold block animate-pulse">Menghitung...</span>
                         </div>
                     </div>
 
-                    <!-- Actions -->
-                    <div class="flex items-center space-x-3">
-                        <button onclick="openModal('${item.id}')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700/80 font-bold py-2.5 px-4 rounded-xl text-xs transition duration-200">
-                            Persyaratan Detail
-                        </button>
-                        <a href="https://smb.telkomuniversity.ac.id" target="_blank" class="bg-telkom-600 hover:bg-telkom-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition duration-200 flex items-center justify-center">
-                            Daftar <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </a>
-                    </div>
+                    ${
+                        isEligible 
+                        ? `
+                            <!-- Daftar Jurusan S1 yang boleh dipilih -->
+                            <div class="space-y-2 pt-1 border-t border-slate-800/60 mb-5">
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+                                    🎓 Jurusan S1 / D4 yang Boleh Kamu Pilih (Khusus ${userSchoolType.toUpperCase()}):
+                                </span>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+                                    ${majorsHtml}
+                                </div>
+                            </div>
+
+                            <!-- Tombol Aksi -->
+                            <div class="flex items-center space-x-2 pt-2">
+                                <button onclick="openModal('${item.id}')" class="flex-1 py-2.5 rounded-xl text-xs font-bold bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white transition duration-150">
+                                    Melihat Syarat Selengkapnya
+                                </button>
+                                <a href="https://smb.telkomuniversity.ac.id" target="_blank" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-telkom-600 hover:bg-telkom-700 text-white transition duration-150 flex items-center justify-center">
+                                    Daftar <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                                </a>
+                            </div>
+                        `
+                        : `
+                            <!-- Notifikasi Tidak Layak -->
+                            <div class="bg-rose-950/30 border border-rose-900/50 p-3 rounded-xl flex items-start space-x-2 mt-4">
+                                <i class="fa-solid fa-circle-exclamation text-rose-500 text-sm mt-0.5"></i>
+                                <p class="text-[11px] text-rose-300 leading-relaxed">${ineligibleReason}</p>
+                            </div>
+                        `
+                    }
                 `;
 
-                container.appendChild(card);
+                grid.appendChild(card);
             });
         }
 
-        // Toggle sorting categories
-        function sortScholarships(type) {
-            currentSort = type;
-            const btnBenefit = document.getElementById('btn-sort-benefit');
-            const btnEase = document.getElementById('btn-sort-ease');
+        // Hitung Mundur Sisa Hari Beasiswa Berdetik Terus
+        function updateCountdownTimers() {
+            scholarshipsDatabase.forEach(item => {
+                const el = document.getElementById(`timer-${item.id}`);
+                if (!el) return;
 
-            if (type === 'benefit') {
-                btnBenefit.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 bg-telkom-600 text-white shadow-md shadow-telkom-950";
-                btnEase.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 text-slate-400 hover:text-slate-200";
-            } else {
-                btnEase.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 bg-telkom-600 text-white shadow-md shadow-telkom-950";
-                btnBenefit.className = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center space-x-2 text-slate-400 hover:text-slate-200";
-            }
-
-            renderScholarships();
-            updateAllTimers();
-        }
-
-        // Timer Update Logic
-        function updateAllTimers() {
-            scholarships.forEach(item => {
-                const timerElement = document.getElementById(`timer-${item.id}`);
-                if (!timerElement) return;
-
-                const targetDate = new Date(item.closeDate).getTime();
+                const target = new Date(item.closeDate).getTime();
                 const now = new Date().getTime();
-                const difference = targetDate - now;
+                const diff = target - now;
 
-                if (difference <= 0) {
-                    timerElement.innerText = "PENDAFTARAN TUTUP";
-                    timerElement.className = "text-xs font-bold text-slate-600 font-sans";
+                if (diff <= 0) {
+                    el.innerText = "PENDAFTARAN SUDAH TUTUP";
+                    el.className = "text-slate-500 font-bold text-xs";
                 } else {
-                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-                    timerElement.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                    el.innerText = `${days} Hari, ${hours} Jam, ${minutes} Menit, ${seconds} Detik`;
                 }
             });
         }
 
-        function formatTimelineDate(isoString) {
-            const date = new Date(isoString);
-            const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
-        }
-
-        // Interactive Checker Logic
-        function calculateEligibility() {
-            const gradYear = document.getElementById('calc-grad').value;
-            const raporVal = parseFloat(document.getElementById('calc-rapor').value);
-            const hasCert = document.getElementById('calc-cert').value;
-
-            const resultBox = document.getElementById('calc-result');
-            const titleEl = document.getElementById('calc-title');
-            const descEl = document.getElementById('calc-desc');
-            const badgesEl = document.getElementById('calc-badges');
-            const iconEl = document.getElementById('calc-icon');
-            const iconBox = document.getElementById('calc-icon-box');
-
-            if (isNaN(raporVal) || raporVal < 0 || raporVal > 100) {
-                alertNotification("Silakan masukkan nilai rata-rata rapor yang valid (0-100).");
-                return;
-            }
-
-            resultBox.classList.remove('hidden');
-            badgesEl.innerHTML = '';
-
-            // 1. Check age / grad limit
-            if (gradYear === '2023') {
-                iconEl.className = "fa-solid fa-circle-xmark text-2xl text-rose-500";
-                iconBox.className = "p-3 rounded-xl bg-rose-950/40 text-rose-400";
-                titleEl.innerText = "Status: Kurang Memenuhi Syarat";
-                descEl.innerText = "Brosur pendaftaran program beasiswa 2026 mensyaratkan kelulusan maksimal 3 tahun terakhir (2024, 2025, atau 2026)[cite: 3, 7]. Sebaiknya kamu berkonsultasi dengan bagian admisi di nomor whatsapp resmi apakah ada program ekstensi / transfer.";
-                return;
-            }
-
-            // 2. Process recommendations
-            let recommended = [];
-            let warnings = [];
-
-            // Tel-U Endowment
-            if (raporVal >= 70) {
-                recommended.push("Endowment Fund (Bagus)");
-            } else {
-                warnings.push("Rapor di bawah 70 untuk Endowment Fund[cite: 3]");
-            }
-
-            // Jalur Rapor regional
-            if (raporVal >= 70) {
-                recommended.push("Jalur Rapor Surabaya/Jakarta (Mudah)");
-            }
-
-            // Beasiswa Prestasi
-            if (raporVal >= 75 && hasCert === 'yes') {
-                recommended.push("Beasiswa Prestasi (Sangat Direkomendasikan!)");
-            } else if (raporVal < 75) {
-                warnings.push("Rapor di bawah 75 untuk Beasiswa Prestasi[cite: 7]");
-            } else if (hasCert === 'no') {
-                warnings.push("Beasiswa Prestasi memerlukan sertifikat kepengurusan/juara[cite: 7]");
-            }
-
-            // Render Output
-            iconEl.className = "fa-solid fa-circle-check text-2xl text-emerald-500";
-            iconBox.className = "p-3 rounded-xl bg-emerald-950/40 text-emerald-400";
-            titleEl.innerText = "Analisis Berhasil Diperoleh!";
-            
-            let resultText = `Berdasarkan kelulusan tahun **${gradYear}** dan rata-rata rapor **${raporVal}**:\n\n`;
-            if (recommended.length > 0) {
-                resultText += `Kamu layak mendaftar di jalur: **${recommended.join(', ')}**.\n`;
-            }
-            if (warnings.length > 0) {
-                resultText += `Hambatan potensial: ${warnings.join('; ')}.`;
-            }
-
-            descEl.innerHTML = resultText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-            // Generate interactive badges
-            recommended.forEach(rec => {
-                const badge = document.createElement('span');
-                badge.className = "px-3 py-1 rounded-lg text-[10px] font-bold bg-telkom-950 border border-telkom-900/50 text-telkom-400";
-                badge.innerText = rec.split(' (')[0];
-                badgesEl.appendChild(badge);
-            });
-        }
-
-        // Modal functions
+        // Buka PopUp Detail Beasiswa
         function openModal(id) {
-            const item = scholarships.find(s => s.id === id);
+            const item = scholarshipsDatabase.find(s => s.id === id);
             if (!item) return;
 
             document.getElementById('modal-title').innerText = item.title;
-            document.getElementById('modal-years').innerText = item.targetYears;
-            document.getElementById('modal-fee').innerText = item.pembelianPIN;
             document.getElementById('modal-badge').innerText = item.badge;
+            document.getElementById('modal-pdf-ref').innerText = `Sumber File: ${item.pdfName}`;
             
-            const headerBg = document.getElementById('modal-header-bg');
-            headerBg.className = `p-6 text-white relative bg-gradient-to-r ${item.colorClasses}`;
+            // Format Waktu Deadline
+            const deadDate = new Date(item.closeDate);
+            const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+            document.getElementById('modal-deadline').innerText = `Tutup pendaftaran pada tanggal ${deadDate.getDate()} ${months[deadDate.getMonth()]} ${deadDate.getFullYear()}`;
 
-            // Requirements
-            const reqContainer = document.getElementById('modal-requirements');
-            reqContainer.innerHTML = '';
-            item.requirements.forEach(req => {
+            // Isi List Aturan Persyaratan
+            const rulesContainer = document.getElementById('modal-rules');
+            rulesContainer.innerHTML = '';
+            item.rules.forEach(rule => {
                 const li = document.createElement('li');
-                li.innerHTML = req;
-                reqContainer.appendChild(li);
+                li.innerText = rule;
+                rulesContainer.appendChild(li);
             });
 
-            // Timeline
+            // Isi Alur Timeline Seleksi
             const timelineContainer = document.getElementById('modal-timeline');
             timelineContainer.innerHTML = '';
-            item.timeline.forEach((step, idx) => {
-                const stepEl = document.createElement('div');
-                stepEl.className = "flex items-start space-x-3";
-                stepEl.innerHTML = `
-                    <div class="bg-slate-900 border border-slate-700/80 p-1.5 rounded-lg text-telkom-500 shrink-0 font-mono text-[10px] font-bold h-6 w-6 flex items-center justify-center">
+            item.timeline.forEach((t, idx) => {
+                const div = document.createElement('div');
+                div.className = "flex items-start space-x-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800";
+                div.innerHTML = `
+                    <div class="h-5 w-5 bg-telkom-850 border border-telkom-500/30 rounded-full flex items-center justify-center font-mono font-bold text-[9px] text-white shrink-0 mt-0.5">
                         ${idx + 1}
                     </div>
                     <div>
-                        <strong class="block text-xs text-white">${step.date}</strong>
-                        <span class="text-[11px] text-slate-400">${step.desc}</span>
+                        <strong class="block text-slate-100 text-[11px]">${t.date}</strong>
+                        <span class="text-[10px] text-slate-400 block">${t.action}</span>
                     </div>
                 `;
-                timelineContainer.appendChild(stepEl);
+                timelineContainer.appendChild(div);
             });
 
+            // Munculkan PopUp Modal
             const modal = document.getElementById('detail-modal');
             modal.classList.remove('hidden');
             setTimeout(() => {
@@ -690,24 +811,14 @@
             }, 50);
         }
 
+        // Tutup PopUp Detail Beasiswa
         function closeModal() {
             const modal = document.getElementById('detail-modal');
             modal.firstElementChild.classList.remove('scale-100');
             modal.firstElementChild.classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
-            }, 200);
-        }
-
-        function alertNotification(message) {
-            const toast = document.createElement('div');
-            toast.className = "fixed bottom-5 right-5 z-50 bg-slate-900 border border-rose-500/50 p-4 rounded-2xl shadow-xl flex items-center space-x-3 text-slate-100 text-xs animate-bounce";
-            toast.innerHTML = `
-                <i class="fa-solid fa-circle-exclamation text-rose-500 text-lg"></i>
-                <span>${message}</span>
-            `;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 4000);
+            }, 150);
         }
     </script>
 </body>
